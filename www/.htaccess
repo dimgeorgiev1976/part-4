@@ -2,13 +2,11 @@ AddDefaultCharset UTF-8
 php_flag display_errors on
 php_value error_reporting -1; 
 
-# ОБРАБОТКА ССЫЛОК/ ЕДИНАЯ ТОЧКА ВХОДА(все запросы идут на файл index.php) - включаем движок для перенаправления ссылок когда наш сервер будет принимать запросы к разным страницам но будет сам направлять их на index.php
 RewriteEngine on
 
-# -/- кроме фавикон - брабатыаем любой запрошенный файл кроме фавиконки(или отобразим её)
+#Don't favicon!
 RewriteCond %{REQUEST_FILENAME} !^favicon\.ico
 
-# условия перенаправления - какой бы файл не был запрошен - мы будем направлять их на index.php, так чтобы эта страница обрабатывала все наши запросы
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l

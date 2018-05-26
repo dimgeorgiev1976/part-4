@@ -2,8 +2,9 @@
 
 require "config.php";
 require "db.php";
-
-// echo HOST;
+session_start();
+// $currentUser = $_SESSION['logged_user'];
+// echo HOST;http://part-4/work-edit.html
 // echo ROOT;
 
 // echo "index.php";
@@ -44,6 +45,15 @@ switch ( $uri[0]) {
     case 'registration':
         include "modules/login/registration.php";
         break;
+
+    case 'profile':
+        include "modules/profile/index.php";
+        break;
+
+    case 'profile-edit':
+        include "modules/profile/edit.php";
+        break;
+
 
 	case 'about':
 		include "modules/about/index.php";

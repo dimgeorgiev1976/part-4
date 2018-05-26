@@ -5,7 +5,7 @@
     </div>
     <div class="header-user__inner-content-box">
       <div class="header-user__inner-name-desc">
-        <h2><?=$currentUser->name?> <?=$currentUser->secondname?></h2>
+        <h2><?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['secondname']?></h2>
         <p>Пользователь</p>
       </div>
       <div class="header-user__inner-buttons-box">

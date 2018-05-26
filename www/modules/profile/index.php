@@ -1,12 +1,10 @@
 <?php
 
-$details = R::find('about', 1);
-$aboutName = $details[1]['name'];
-$aboutDescription = $details[1]['description'];
+// $currentUser = $_SESSION['logged_user'];
 
 // готовим контент для центральной части
 ob_start();
-include ROOT . "templates/main/main.tpl";
+include ROOT . "templates/profile/profile.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

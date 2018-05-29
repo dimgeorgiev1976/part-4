@@ -1,8 +1,4 @@
-<div class="header-user__inner" id="navigation-login">
-  <div class="header-user__inner-box">
-    <div class="header-user__inner-avatar">
-      <div class="avatar-user__circle-border"><img src="<?=HOST?>templates/assets/img/avatar-img/0001.jpg" alt="image"/></div>
-    </div>
+    <!-- Logged user box -->
     <div class="header-user__inner-content-box">
       <div class="header-user__inner-name-desc">
         <h2><?=$_SESSION['logged_user']['name']?> <?=$_SESSION['logged_user']['secondname']?></h2>
@@ -19,5 +15,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>        
 </div> <!-- /header-user__inner -->

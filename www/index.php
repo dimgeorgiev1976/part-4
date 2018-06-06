@@ -2,6 +2,7 @@
 
 require "config.php";
 require "db.php";
+require "libs/functions.php";
 session_start();
 // $currentUser = $_SESSION['logged_user'];
 // echo HOST;http://part-4/work-edit.html
@@ -33,7 +34,8 @@ switch ( $uri[0]) {
 		break;
 
 
-    /* --- USERS --- */
+// ::::::::::::::::::: USERS :::::::::::::::::::
+
     case 'login':
         include "modules/login/login.php";
         break;
@@ -62,22 +64,32 @@ switch ( $uri[0]) {
         include "modules/profile/edit.php";
         break;
 
+    // ::::::::::::::::::: BLOG :::::::::::::::::::
 
-	case 'about':
-		include "modules/about/index.php";
-		break;
+    case 'blog':
+        include "modules/blog/index.php";
+        break;
 
-	case 'contacts':
-		include "modules/contacts/index.php";
-		break;
-
-	case 'blog':
-		include "modules/blog/index.php";
-		break;
-		
     case 'blog/post':
         include "modules/blog/post.php";
         break;
+
+    case 'blog/post-new':
+        include "modules/blog/post-new.php";
+        break;
+
+    // ::::::::::::::::::: PAGES :::::::::::::::::::
+
+    case 'about':
+        include "modules/about/index.php";
+        break;
+
+    case 'contacts':
+        include "modules/contacts/index.php";
+        break;
+
+    
+
 
 	default:
 		include "modules/main/index.php";

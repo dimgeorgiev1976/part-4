@@ -8,7 +8,12 @@
 			<span class="full-post__author">
 				<?=$post['name']?>
 				<?=$post['secondname']?>
-			</span><a class="full-post__link" href="#">Путешествия</a>
+			</span>
+			
+			<a class="full-post__link" href="<?=HOST?>blog?cat_id=<?=$post['cat']?>">
+				<?=$post['cat_title']?>
+			</a>
+
 			<span class="full-post__date">
 				<?php echo rus_date("j F Y H:i ", strtotime($post['date_time'])); ?>
 			</span>

@@ -6,7 +6,7 @@
 				<h1>Удалить категорию</h1>
 
 				Вы действительно хотите удалить категорию 
-				<strong><?=$cat['title']?></strong>  с id = 
+				<strong><?=$cat['cat_title']?></strong>  с id = 
 				<strong><?=$cat['id']?></strong> ?
 
 				<input type="submit" name="catDelete" 

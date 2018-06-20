@@ -21,7 +21,7 @@
 					<?php foreach ($cats as $cat): ?>
 						<tr>
 							<th scope="row"><?=$cat['id'];?></th>
-							<td><?=$cat['title'];?></td>
+							<td><?=$cat['cat_title'];?></td>
 							<td>
 								<a class="button button-edit" href="<?=HOST?>blog/category-edit?id=<?=$cat['id'];?>">Редактировать</a>
 							</td>

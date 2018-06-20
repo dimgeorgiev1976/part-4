@@ -5,6 +5,7 @@ if ( !isAdmin() ) {
 	die;
 }
 
+
 // echo "<pre>";
 // print_r($_POST);
 // echo "</pre>";
@@ -21,7 +22,7 @@ if ( isset($_POST['catNew'])) {
 
 	if ( empty($errors)) {
 		$cat = R::dispense('categories');
-		$cat->title = htmlentities($_POST['catTitle']);
+		$cat->cat_title = htmlentities($_POST['catTitle']);
 
 		R::store($cat);
 

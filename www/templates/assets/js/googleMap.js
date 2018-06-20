@@ -1,6 +1,3 @@
-
-console.log('asdasda');
-
 function initMap(){
 
     let isDraggable;
@@ -35,7 +32,7 @@ function initMap(){
 
         title: 'Наш маркер: Красная Площадь',
 
-        icon: './img/googleMap/pin-green.png'
+        icon: '../templates/assets/img/googleMap/pin-green.png'
 
 });
 

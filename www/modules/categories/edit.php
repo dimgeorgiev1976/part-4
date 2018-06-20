@@ -22,7 +22,7 @@ if ( isset($_POST['catEdit'])) {
 
 
 	if ( empty($errors)) {
-		$cat->title = htmlentities($_POST['catTitle']);
+		$cat->cat_title = htmlentities($_POST['catTitle']);
 
 		R::store($cat);
 

@@ -8,6 +8,18 @@
 					<div class="add-post__title">Название</div>
 					<input class="form-full-width" type="text" name="postTitle" placeholder="Введите имя" value="Новый пост"/>
 				</section>
+
+
+				<section class="add-post">
+					<div class="add-post__cat">Категория</div>
+					<select name="cat" id="">
+						<?php foreach ($cats as $cat): ?>
+							<option value="<?=$cat['id'];?>"><?=$cat['cat_title'];?></option>
+						<?php endforeach ?>
+					</select>
+				</section>
+
+
 				<section class="add-post">
 					<div class="add-post__title">Изображение</div>
 					<div class="form-download">

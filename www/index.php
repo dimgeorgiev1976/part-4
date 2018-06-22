@@ -77,6 +77,23 @@ switch ( $uri[0]) {
     case 'blog/post-new':
         include "modules/blog/post-new.php";
         break;
+    // ::::::::::::::::::: CATEGORIES :::::::::::::::::::
+
+    case 'blog/categories':
+        include "modules/categories/all.php";
+        break;
+
+    case 'blog/category-new':
+        include "modules/categories/new.php";
+        break;
+        
+    case 'blog/category-edit':
+        include "modules/categories/edit.php";
+        break;
+    case 'blog/category-delete':
+        include "modules/categories/delete.php";
+        break;
+
 
     // ::::::::::::::::::: PAGES :::::::::::::::::::
 
@@ -86,6 +103,13 @@ switch ( $uri[0]) {
 
     case 'contacts':
         include "modules/contacts/index.php";
+        break;
+         
+    case 'contacts-edit':
+        include "modules/contacts/edit.php";
+        break;
+    case 'messages':
+        include "modules/contacts/messages.php";
         break;
 
     

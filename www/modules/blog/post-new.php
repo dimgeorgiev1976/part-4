@@ -5,6 +5,8 @@ if ( !isAdmin() ) {
 	die;
 }
 
+$cats = R::find('categories', 'ORDER BY id DESC');
+
 // echo "<pre>";
 // print_r($_POST);
 // echo "</pre>";
@@ -28,6 +30,7 @@ if ( isset($_POST['postNew'])) {
 		$post->date = time();
 		$post->authorId = $_SESSION['logged_user']['id'];
 		$post->dateTime = R::isoDateTime();
+		$post->cat = htmlentities($_POST['cat']);
 
 		if ( isset($_FILES["postImg"]["name"]) && $_FILES["postImg"]["tmp_name"] != "" ) {
 			

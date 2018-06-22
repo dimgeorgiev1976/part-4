@@ -2,13 +2,14 @@
 
 
 
-if ( @$_GET['cat_id'] != '') {
-	$posts = R::find('posts', 'cat = ' . $_GET['cat_id'] . ' ORDER BY id DESC' );
-
-} else {
-	$posts = R::find('posts', 'ORDER BY id DESC');
-
+if ( !isAdmin() ) {
+	header("Location: " . HOST);
+	die;
 }
+
+
+
+	$messages = R::find('messages', ' ORDER BY id DESC' );
 
 
 // $blogPosts = ['Пост 1', 'Пост 2', 'Пост 3', 'Пост 4', 'Пост 5'];
@@ -17,7 +18,7 @@ if ( @$_GET['cat_id'] != '') {
 
 // Готовим контент для центральной части
 ob_start();
-include ROOT . "templates/blog/blog-all-posts.tpl";
+include ROOT . "templates/contacts/messages.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

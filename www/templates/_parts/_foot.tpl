@@ -6,3 +6,6 @@
   <script src="<?php echo HOST;?>templates/assets/js/main.js"></script><!-- endbuild -->
     <script src="<?php echo HOST ?>templates/assets/js/custom-file-input.js"></script><!-- endbuild -->
   <script defer="defer" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+  </body>
+  </html>

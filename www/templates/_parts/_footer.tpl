@@ -9,8 +9,8 @@
             <li><a href="/">Главная</a></li>
             <li><a href="/about.html">Обо мне</a></li>
             <li><a href="/works.html">Работы</a></li>
-            <li><a href="/blog.html">Блог</a></li>
-            <li><a href="/contact.html">Контакты</a></li>
+            <li><a href="<?=HOST?>blog ">Блог</a></li>
+            <li><a href="<?=HOST?>contacts">Контакты</a></li>
           </ul>
         </div>
         <div class="col-md-5 col-sm">

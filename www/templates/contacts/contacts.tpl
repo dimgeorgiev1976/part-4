@@ -88,7 +88,8 @@
       <?php include( ROOT . 'templates/_parts/_errors.tpl') ?>
 
        <div class="input-error-message">
-         <input class="form-name form-name-fullScreen" type="text" name="name" placeholder="Введите имя"/>
+         <input class="form-name form-name-fullScreen"
+          type="text" name="name" placeholder="Введите имя"/>
        </div>
        <div class="input-error-message">
          <input class="form-name form-name-fullScreen" type="text" name="email" placeholder="Введите Email"/>
@@ -107,7 +108,8 @@
          </div>
        </div>
        <div class="form_submit-button">
-        <input type="submit" name="newMessage" value="Отправить" class="button button-save">
+        <input type="submit" name="newMessage" 
+        value="Отправить" class="button button-save">
        </div>
      </form>
    </div>
@@ -117,5 +119,7 @@
  </div>
 
 
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr67yxxPmnF-xb4JVokCVGgLbPtuqxiA&callback=initMap"></script>
- <script src="<?=HOST?>templates/assets/js/googleMap.js"></script>
+ <script async defer 
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIr67yxxPmnF-xb4JVokCVGgLbPtuqxiA&callback=initMap"></script>
+ <script 
+ src="<?=HOST?>templates/assets/js/googleMap.js"></script>

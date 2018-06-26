@@ -1,22 +1,23 @@
 <?php 
 
-$about = R::load('about', 1);
-$technologies = R::find('technologies');
+if ( !isAdmin() ) {
+	header("Location: " . HOST);
+	die;
+}
 
-$skills = array();
-foreach ($technologies as $technology) {
-	$skills[] = $technology;
-} 
+$mess = R::load('messages', $_GET["id"]);
 
 
-// echo "<pre>";
-// print_r($about);
-// echo "</pre>";
+ if ( isset($_POST['messDelete'])) {
+		R::trash($mess);
+		header('Location: ' . HOST . "contacts");
+		exit();
+	}
 
 // Готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/about/about.tpl";
+include ROOT . "templates/contacts/delete.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 
@@ -24,6 +25,6 @@ ob_end_clean();
 include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/template.tpl";
 include ROOT . "templates/_parts/_footer.tpl";
-include ROOT . "templates/_parts/_foot.tpl";		
-		
- ?>
+include ROOT . "templates/_parts/_foot.tpl";
+
+?>

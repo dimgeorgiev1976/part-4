@@ -16,6 +16,7 @@ if ( isset($_POST['newMessage'])) {
 		$message->email = htmlentities($_POST['email']);
 		$message->name = htmlentities($_POST['name']);
 		$message->message = htmlentities($_POST['message']);
+		$message->dateTime = R::isoDateTime();
 
 		if ( isset($_FILES["file"]["name"]) && $_FILES["file"]["tmp_name"] != "" ) {
 

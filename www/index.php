@@ -101,6 +101,18 @@ switch ( $uri[0]) {
         include "modules/about/index.php";
         break;
 
+    case 'about-edit':
+        include "modules/about/edit.php";
+        break;
+
+    case 'skills-edit':
+        include "modules/about/skills-edit.php";
+        break;
+        
+    case 'expirience-edit':
+        include "modules/about/expirience-edit.php";
+        break;
+
     case 'contacts':
         include "modules/contacts/index.php";
         break;
@@ -112,7 +124,9 @@ switch ( $uri[0]) {
         include "modules/contacts/messages.php";
         break;
 
-    
+        case 'contacts-delete':
+        include "modules/contacts/delete.php";
+        break;
 
 
 	default:

@@ -1,40 +1,40 @@
 <?php 
 
+if ( !isAdmin() ) {
+	header("Location: " . HOST);
+	die;
+}
+
 $errors = array();
-$currentUser = $_SESSION['logged_user'];
-$user = R::load('users', $currentUser->id);
 
-if ( isset($_POST['profile-upate'])) {
+$about = R::load('about', 1);
 
-	if ( trim($_POST['email']) == '') {
-		$errors[] = ['title' => 'Введите Email' ];
-	}
+
+
+if ( isset($_POST['aboutUpdate'])) {
 
 	if ( trim($_POST['name']) == '') {
 		$errors[] = ['title' => 'Введите Имя' ];
 	}
 
-	if ( trim($_POST['secondname']) == '') {
-		$errors[] = ['title' => 'Введите Фамилия' ];
+	if ( trim($_POST['description']) == '') {
+		$errors[] = ['title' => 'Введите описание' ];
 	}
 
 	if ( empty($errors)) {
 
-		$user->name = htmlentities($_POST['name']);
-		$user->secondname = htmlentities($_POST['secondname']);
-		$user->email = htmlentities($_POST['email']);
-		$user->city = htmlentities($_POST['city']);
-		$user->country = htmlentities($_POST['country']);
+		$about->name = htmlentities($_POST['name']);
+		$about->description = htmlentities($_POST['description']);
+	
 
-
-		if ( isset($_FILES["avatar"]["name"]) && $_FILES["avatar"]["tmp_name"] != "" ) {
+		if ( isset($_FILES["photo"]["name"]) && $_FILES["photo"]["tmp_name"] != "" ) {
 			
 			// Write file image params in variables
-			$fileName = $_FILES["avatar"]["name"];
-			$fileTmpLoc = $_FILES["avatar"]["tmp_name"];
-			$fileType = $_FILES["avatar"]["type"];
-			$fileSize = $_FILES["avatar"]["size"];
-			$fileErrorMsg = $_FILES["avatar"]["error"];
+			$fileName = $_FILES["photo"]["name"];
+			$fileTmpLoc = $_FILES["photo"]["tmp_name"];
+			$fileType = $_FILES["photo"]["type"];
+			$fileSize = $_FILES["photo"]["size"];
+			$fileErrorMsg = $_FILES["photo"]["error"];
 			$kaboom = explode(".", $fileName);
 			$fileExt = end($kaboom);
 
@@ -53,12 +53,12 @@ if ( isset($_POST['profile-upate'])) {
 			}
 
 			// Поверям установлен ли аватар у пользователя
-			$avatar = $user['avatar'];
-			$avatarFolderLocation = ROOT . 'usercontent/avatar/';
+			$photo = $about['photo'];
+			$avatarFolderLocation = ROOT . 'usercontent/about/';
 
 			// Если аватар уже установлен, то есть загружен ранее то удаляем файл аватара
-			if($avatar != ""){
-				$picurl = $avatarFolderLocation . $avatar; 	
+			if($photo != ""){
+				$picurl = $avatarFolderLocation . $photo; 	
 				// Удаляем аватар
 			    if (file_exists($picurl)) { unlink($picurl); }
 			}
@@ -80,33 +80,23 @@ if ( isset($_POST['profile-upate'])) {
 			$img = createThumbnail($target_file, $wmax, $hmax);
 			$img->writeImage($resized_file);
 
-			$user->avatar = $db_file_name;
-
-
-			$target_file =  $avatarFolderLocation . $db_file_name;
-			$resized_file = $avatarFolderLocation . "48-" . $db_file_name;
-			$wmax = 48;
-			$hmax = 48;
-			$img = createThumbnail($target_file, $wmax, $hmax);
-			$img->writeImage($resized_file);
-
-			$user->avatarSmall = "48-" . $db_file_name;
+			$about->photo = $db_file_name;
 
 		}
 
-		R::store($user);
-		$_SESSION['logged_user'] = $user;
-		$currentUser = $_SESSION['logged_user'];
-		header('Location: ' . HOST . "profile");
+
+		R::store($about);
+		header('Location: ' . HOST . "about");
 		exit();
 	}
 
 }
 
+
 // Готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/profile/profile-edit.tpl";
+include ROOT . "templates/about/edit.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 
@@ -114,6 +104,6 @@ ob_end_clean();
 include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/template.tpl";
 include ROOT . "templates/_parts/_footer.tpl";
-include ROOT . "templates/_parts/_foot.tpl";
+include ROOT . "templates/_parts/_foot.tpl";	
 
 ?>

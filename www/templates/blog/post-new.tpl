@@ -1,9 +1,13 @@
 <div class="full-post">
 	<div class="container">
 		<div class="row">
-			<form action="<?=HOST?>blog/post-new" method="POST" enctype="multipart/form-data">
+			<form action="<?=HOST?>blog/post-new" 
+				method="POST" enctype="multipart/form-data">
 			<div class="col">
 				<h1>Добавить пост</h1>
+
+				      <?php include( ROOT . 'templates/_parts/_errors.tpl') ?>
+
 				<section class="add-post">
 					<div class="add-post__title">Название</div>
 					<input class="form-full-width" type="text" name="postTitle" placeholder="Введите имя" value="Новый пост"/>

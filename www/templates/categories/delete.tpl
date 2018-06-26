@@ -1,7 +1,8 @@
 <div class="full-post">
 	<div class="container">
 		<div class="row">
-			<form action="<?=HOST?>blog/category-delete?id=<?=$cat['id']?>" method="POST" enctype="multipart/form-data">
+			<form action="<?=HOST?>blog/category-delete?id=<?=$cat['id']?>" method="POST" 
+				enctype="multipart/form-data">
 			<div class="col">
 				<h1>Удалить категорию</h1>
 

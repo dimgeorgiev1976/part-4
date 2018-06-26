@@ -8,7 +8,8 @@
  ?>
 
 
- <div class="edit-contacts"><a class="button button-edit" href="<?=HOST?>contacts-edit"> Редактировать </a>
+ <div class="edit-contacts"><a class="button button-edit" 
+  href="<?=HOST?>contacts-edit"> Редактировать </a>
  </div>
  <main class="wrap-content">
    <div class="main-content main-content--admin">

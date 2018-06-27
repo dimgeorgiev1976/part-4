@@ -4,20 +4,16 @@
         <div class="col"></div>
         <div class="col-10">
           <h1>Редактировать - Обо Мне</h1>
+          
+          <?php include( ROOT . 'templates/_parts/_errors.tpl') ?>
+          
 
 
-      <?php include( ROOT . 'templates/_parts/_errors.tpl') ?>
-
-
-          <form action="<?=HOST?>about-edit" 
-          method="POST" enctype="multipart/form-data">
-
-
+          <form action="<?=HOST?>about-edit" method="POST" enctype="multipart/form-data">
 
           <section class="add-post">
             <div class="add-post__title">Имя, фамилия</div>
-            <input value="<?=$about->name?>" class="form-full-width" type="text" 
-            name="name" placeholder="Емельян Казаков"/>
+            <input value="<?=$about->name?>" class="form-full-width" type="text" name="name" placeholder="Емельян Казаков"/>
           </section>
           <section class="add-post">
             <div class="add-post__title">Фотография</div>
@@ -31,29 +27,26 @@
               </div>
             </div>
             <div class="avatar avatar-big">
-
             <?php 
-        if ( $about->photo != '' ) {
-          $photo = HOST . 'usercontent/about/' . $about->photo;
-        } else {
-          $photo = '/img/avatar-img/photo-big.jpg';
-        }
-        ?>
-        <img src="<?=$photo?>" alt=""/>
-
-               </div>
+              if ( $about->photo != '' ) {
+                $photo = HOST . 'usercontent/about/' . $about->photo;
+              } else {
+                $photo = '/img/avatar-img/photo-big.jpg';
+              }
+            ?>
+            <img src="<?=$photo?>" alt=""/>
+            </div>
 
           </section>
           <section class="add-post">
             <div class="add-post__title">Информация на главной</div>
-            <textarea class="form-message" name="description" 
-            placeholder="Информация на главной"><?=$about->description?></textarea>
+            <textarea class="form-message" name="description" placeholder="Информация на главной"><?=$about->description?></textarea>
           </section>
           <section class="add-post">
-          <input type="submit" name="aboutUpdate" class="button button-save" value="Сохранить">
-          <a class="button button-regular" href="<?=HOST?>about"> Отмена </a>
+            <input type="submit" name="aboutUpdate" class="button button-save" value="Сохранить">
+            <a class="button button-regular" href="<?=HOST?>about"> Отмена </a>
 
-        </section>
+          </section>
 
           </form>
         </div>

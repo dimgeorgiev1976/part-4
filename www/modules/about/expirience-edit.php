@@ -5,40 +5,29 @@ if ( !isAdmin() ) {
 	die;
 }
 
-// $about = R::load('about', 1);
+$jobs = R::find('jobs', 'ORDER BY id DESC');
 
 $errors = array();
 
-if ( isset($_POST['contactsUpdate'])) {
+if ( isset($_POST['newWork'])) {
 
-	if ( trim($_POST['email']) == '') {
-		$errors[] = ['title' => 'Введите Email' ];
+	if ( trim($_POST['period']) == '') {
+		$errors[] = ['title' => 'Введите период работы' ];
 	}
 
-	if ( trim($_POST['tel']) == '') {
-		$errors[] = ['title' => 'Введите Телефон' ];
-	}
-
-	if ( trim($_POST['address']) == '') {
-		$errors[] = ['title' => 'Введите Адрес' ];
+	if ( trim($_POST['title']) == '') {
+		$errors[] = ['title' => 'Введите должность' ];
 	}
 
 	if ( empty($errors)) {
 
-		$contacts->email = htmlentities($_POST['email']);
-		$contacts->tel = htmlentities($_POST['tel']);
-		$contacts->address = htmlentities($_POST['address']);
+		$job = R::dispense('jobs');
+		$job->period = htmlentities($_POST['period']);
+		$job->title = htmlentities($_POST['title']);
+		$job->description = htmlentities($_POST['description']);
 
-		$contacts->name = htmlentities($_POST['name']);
-		$contacts->secondname = htmlentities($_POST['secondname']);
-		$contacts->skype = htmlentities($_POST['skype']);
-		$contacts->vk = htmlentities($_POST['vk']);
-		$contacts->fb = htmlentities($_POST['fb']);
-		$contacts->github = htmlentities($_POST['github']);
-		$contacts->twitter = htmlentities($_POST['twitter']);
-
-		R::store($contacts);
-		header('Location: ' . HOST . "contacts");
+		R::store($job);
+		header('Location: ' . HOST . "expirience-edit");
 		exit();
 	}
 

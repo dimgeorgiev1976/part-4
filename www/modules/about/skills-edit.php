@@ -4,41 +4,31 @@ if ( !isAdmin() ) {
 	header("Location: " . HOST);
 	die;
 }
-
+$skills = R::load('skills', 1);
 // $about = R::load('about', 1);
 
 $errors = array();
 
-if ( isset($_POST['contactsUpdate'])) {
+if ( isset($_POST['skillsUpdate'])) {
 
-	if ( trim($_POST['email']) == '') {
-		$errors[] = ['title' => 'Введите Email' ];
-	}
-
-	if ( trim($_POST['tel']) == '') {
-		$errors[] = ['title' => 'Введите Телефон' ];
-	}
-
-	if ( trim($_POST['address']) == '') {
-		$errors[] = ['title' => 'Введите Адрес' ];
-	}
+	
 
 	if ( empty($errors)) {
 
-		$contacts->email = htmlentities($_POST['email']);
-		$contacts->tel = htmlentities($_POST['tel']);
-		$contacts->address = htmlentities($_POST['address']);
+		$skills->html5 = htmlentities($_POST['html']);
+		$skills->css3 = htmlentities($_POST['css']);
+		$skills->js = htmlentities($_POST['js']);
 
-		$contacts->name = htmlentities($_POST['name']);
-		$contacts->secondname = htmlentities($_POST['secondname']);
-		$contacts->skype = htmlentities($_POST['skype']);
-		$contacts->vk = htmlentities($_POST['vk']);
-		$contacts->fb = htmlentities($_POST['fb']);
-		$contacts->github = htmlentities($_POST['github']);
-		$contacts->twitter = htmlentities($_POST['twitter']);
+		$skills->jquery = htmlentities($_POST['jquery']);
+		$skills->php = htmlentities($_POST['php']);
+		$skills->mysql = htmlentities($_POST['mysql']);
+		$skills->git = htmlentities($_POST['git']);
+		$skills->gulp = htmlentities($_POST['gulp']);
+		$skills->bower = htmlentities($_POST['bower']);
+		$skills->webpack = htmlentities($_POST['webpack']);
 
-		R::store($contacts);
-		header('Location: ' . HOST . "contacts");
+		R::store($skills);
+		header('Location: ' . HOST . "about");
 		exit();
 	}
 

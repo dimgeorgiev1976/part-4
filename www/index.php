@@ -74,6 +74,10 @@ switch ( $uri[0]) {
         include "modules/blog/post.php";
         break;
 
+    case 'blog/post-edit':
+        include "modules/blog/post-edit.php";
+        break;
+
     case 'blog/post-new':
         include "modules/blog/post-new.php";
         break;
@@ -108,10 +112,19 @@ switch ( $uri[0]) {
     case 'skills-edit':
         include "modules/about/skills-edit.php";
         break;
-        
-    case 'expirience-edit':
-        include "modules/about/expirience-edit.php";
+
+
+    // case 'expirience':
+    //     include "modules/works/index.php";
+    //     break;    
+
+        case 'expirience':
+        include "modules/about/expirience.php";
         break;
+
+    // case 'expirience-edit':
+    //     include "modules/about/expirience-edit.php";
+    //     break;
 
     case 'contacts':
         include "modules/contacts/index.php";
@@ -127,6 +140,7 @@ switch ( $uri[0]) {
         case 'contacts-delete':
         include "modules/contacts/delete.php";
         break;
+
 
 
 	default:

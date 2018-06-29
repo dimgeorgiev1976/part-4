@@ -1,9 +1,18 @@
 <?php
 
-$details = R::find('about', 1);
-$aboutName = $details[1]['name'];
-$aboutDescription = $details[1]['description'];
+$about = R::findOne('about', 1);
+$posts = R::find('posts', 'ORDER BY id DESC LIMIT 3');
+$jobs = R::find('jobs', 'ORDER BY id DESC LIMIT 3');
+// echo "<pre>";
+// print_r($jobs); 
+// echo "</pre>";
 
+// $aboutName = $details[1]['name'];
+// $aboutDescription = $details[1]['description'];
+
+
+$title = "Главная";
+$content ="Содержимое главной страницы";
 // готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";

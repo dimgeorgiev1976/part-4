@@ -15,7 +15,6 @@ if ( isset($_POST['lost'])) {
 		if ( $user ) {
 
 			// Генерация кода и сохранение кода в БД
-			// Генерация кода и сохранение кода в БД
 			function random_str( $num = 30 ) {
 				return substr(str_shuffle('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, $num);
 			}
@@ -31,7 +30,14 @@ if ( isset($_POST['lost'])) {
 			$recovery_message .= "set-new-password?email=" . $_POST['email'] . "&code=" . $recovery_code;
 			$recovery_message .= '" target="_blank">';
 			$recovery_message .= "Установить новый пароль</a></p>";
-			mail($_POST['email'], 'Восстановление доступа', $recovery_message);
+
+			$headers = 	"MIME-Version: 1.0" . PHP_EOL . 
+						"Content-Type: text/html; charset=utf-8" . PHP_EOL .
+						"From:" . adopt( SITE_NAME ) . "<" . SITE_EMAIL . " >" . PHP_EOL .
+						"Reply-To: ADMIN_EMAIL";
+
+			mail($_POST['email'], 'Восстановление доступа', $recovery_message, $headers);
+
 			$success[] = "Инструкции по восстановлению доступа высланы на " . $_POST['email'];
 
 		} else {

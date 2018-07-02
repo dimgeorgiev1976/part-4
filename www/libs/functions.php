@@ -103,4 +103,9 @@ function commentNumber ($num) {
 	echo  $num.' комментари'.$term;
 }
 
+// Adjusting text encoding
+function adopt($text) {
+	return '=?UTF-8?B?'.base64_encode($text).'?=';
+}
+
 ?>

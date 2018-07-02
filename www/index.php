@@ -1,8 +1,15 @@
 <?php 
 
-require "config.php";
-require "db.php";
-require "libs/functions.php";
+define('HOST', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+
+/**
+* Устанавливает физический путь до корневой директории скрипта
+*/
+define('ROOT', dirname(__FILE__).'/');
+
+require ROOT . "config.php";
+require ROOT . "db.php";
+require ROOT . "libs/functions.php";
 session_start();
 // $currentUser = $_SESSION['logged_user'];
 // echo HOST;http://part-4/work-edit.html

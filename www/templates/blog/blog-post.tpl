@@ -13,7 +13,8 @@
 		<div class="col-10">
 
 			<?php if ( isAdmin() ) { ?>
-				<a class="button button-edit" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>"> Редактировать </a>
+				<a class="button button-edit" 
+				href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>"> Редактировать </a>
 			<?php }  ?>
 
 			<h1 class="full-post__title"><?=$post['title']?></h1>
@@ -41,7 +42,12 @@
 					
 				<?=$post['text']?>
 			</article>
-			<div class="full-post__next-prew"><a class="button button-regular" href="#"> <span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Назад  </a><a class="button button-regular" href="#"> Вперед  <span class="button__small-fa-icon"><i class="fas fa-arrow-right"></i></span></a>
+			<div class="full-post__next-prew"><a class="button button-regular" href="#"> 
+				<span class="button__small-fa-icon"><i class="fas fa-arrow-left">
+					
+				</i></span>Назад  </a><a class="button button-regular" 
+				href="#"> Вперед  <span class="button__small-fa-icon">
+					<i class="fas fa-arrow-right"></i></span></a>
 			</div>
 
 			<?php 	if ( count($comments) > 0) {  ?>
@@ -65,12 +71,13 @@
 						</div>
 						<form class="comment-post__form" 
 							method="POST" 
-							action="<?=HOST?>blog/post?id=<?=$post->id?>" > 
+							action="<?=HOST?>blog/post?id=<?=$post['id']?>" > 
 							<?php require ROOT. "templates/_parts/_errors.tpl" ?>
 							<textarea class="form-message" 
 								name="commentText" 
 								placeholder="Присоединиться к обсуждению..."></textarea>
-							<input type="submit" name="addComment" class="button button-regular" value="Опубликовать">
+							<input type="submit" name="addComment" class="button button-regular" 
+							value="Опубликовать">
 						</form>
 					</div>
 					

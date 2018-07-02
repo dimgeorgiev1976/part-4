@@ -9,7 +9,7 @@ $post = R::load('posts', $_GET['id']);
 $categories = R::findAll('categories');
 
 // echo "<pre>";
-// print_r($post);
+// print_r($_POST);
 // echo "</pre>";
 
 $errors = array();

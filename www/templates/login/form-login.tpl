@@ -9,15 +9,10 @@
         </div>
         <div class="additional-info">
           <div class="save-check__block">
-            <input id="save-check" type="checkbox" name="save-check" c
-            hecked="checked" hidden="hidden"/>
+            <input id="save-check" type="checkbox" name="save-check" 
+            checked="checked" hidden="hidden"/>
             <label for="save-check">Запомнить меня</label>
           </div><a href="<?=HOST?>lost-password">Забыл пароль</a>
         </div>
-        
-
-
-        <input type="submit" name="login" class="button button-login" value="Войти">
-
-
+                <input type="submit" name="login" class="button button-login" value="Войти">
       </form>

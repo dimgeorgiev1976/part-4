@@ -1,7 +1,5 @@
 <?php require ROOT. "templates/_parts/_errors.tpl" ?>
 
-
-
 <!-- Если код восстановления верен -->
 <?php if ($recoveryCode) { ?>
 	<!-- Устанавливаем  пароль -->
@@ -27,7 +25,6 @@
 		<input type="submit" name="set" class="button button-login" value="Установить новый пароль">
 	
 	</form>
-
 
 <!--  Если замена паароля произошла успешно -->
 <?php } elseif ($success) { ?>

@@ -1,4 +1,9 @@
 <?php 
+
+
+// echo "<pre>";
+// print_r($_POST); 
+// echo "</pre>";
 $errors = array();
 
 if ( isset($_POST['lost'])) {

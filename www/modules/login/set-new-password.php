@@ -16,12 +16,12 @@ if ( !empty($_GET['email']) ) {
 		// Проверка верности кода
 		if ( $user->recovery_code == $_GET['code']) {
 
-			// if ( $user->recovery_code_times < 1 ) {
-			// 	echo "User recovery code tries - limited";
-			// 	echo "<br><br>";
-			// 	echo "<a href='" . HOST . "'>Вернуться на главную</a>";
-			// 	die;
-			// }
+			if ( $user->recovery_code_times < 1 ) {
+				echo "User recovery code tries - limited";
+				echo "<br><br>";
+				echo "<a href='" . HOST . "'>Вернуться на главную</a>";
+				die;
+			}
 
 			$recoveryCode = true;
 			

@@ -5,7 +5,8 @@
 <!-- Если код восстановления верен -->
 <?php if ($recoveryCode) { ?>
 	<!-- Устанавливаем  пароль -->
-	<form class="form-container" method="POST" action="<?=HOST?>set-new-password" id="form-validate">
+	<form class="form-container" method="POST" action="<?=HOST?>set-new-password" 
+		id="form-validate">
 
 		<div class="form-title">Введите новый пароль</div>
 		<div class="additional-info">
@@ -13,7 +14,9 @@
 		</div>
 		
 		<div class="form-fields" id="form-fields">
-			<input class="form-full-width" type="password" name="resetpassword" placeholder="Новый пароль"  />
+			<input class="form-full-width" 
+			type="password" name="resetpassword" 
+			placeholder="Новый пароль"  />
 		</div>
 
 		<input type="hidden" name="resetemail" value="<?=$_GET['email']?>">

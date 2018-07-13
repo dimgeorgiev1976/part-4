@@ -18,7 +18,9 @@
 		<?php require ROOT. "templates/_parts/_errors.tpl" ?>
 		
 		<div class="form-fields" id="form-fields">
-			<input class="form-full-width" type="text" name="email" placeholder="E-mail" value="test@rightblog.ru" />
+			<input class="form-full-width" type="text" name="email" placeholder="E-mail" 
+			value="" />
+
 		</div>
 
 		<div class="additional-info">

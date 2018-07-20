@@ -19,13 +19,15 @@
             <div class="add-post__title">Фотография</div>
             <div class="form-download">
               <div class="form-download__title">Изображение jpg или png, рекомендуемый размер 205 на 205 пикселей, вес до 2Мб.</div>
-              <div class="form-download__container"> 
-                <label class="form-download__btn">Выбрать файл
-                  <input type="file" id="file" name="photo" style="display:none;"/>
-                </label>
-                <input class="form-download__file-name" id="value" type="text" value="Файл не выбран" disabled="disabled"/>
-              </div>
-            </div>
+ <div class="form-download__container contacts-container-mod"> 
+  <fieldset>
+  <input type="file" id="file" name="file" class="inputfile" 
+  data-multiple-caption="{count} файлов выбрано" multiple />
+  <label for="file" >Выбрать файл</label> <span></span>
+</fieldset>
+    </div>
+     </div>
+     
             <div class="avatar avatar-big">
             <?php 
               if ( $about->photo != '' ) {

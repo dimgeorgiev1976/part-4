@@ -19,14 +19,14 @@
             <div class="add-post__title">Фотография</div>
             <div class="form-download">
               <div class="form-download__title">Изображение jpg или png, рекомендуемый размер 205 на 205 пикселей, вес до 2Мб.</div>
- <div class="form-download__container contacts-container-mod"> 
-  <fieldset>
-  <input type="file" id="file" name="file" class="inputfile" 
-  data-multiple-caption="{count} файлов выбрано" multiple />
-  <label for="file" >Выбрать файл</label> <span></span>
-</fieldset>
-    </div>
-     </div>
+          <div class="form-download__container contacts-container-mod"> 
+          <fieldset>
+          <input type="file" id="file" name="file" class="inputfile" 
+          data-multiple-caption="{count} файлов выбрано" multiple />
+          <label for="file" >Выбрать файл</label> <span></span>
+          </fieldset>
+          </div>
+           </div>
      
             <div class="avatar avatar-big">
             <?php 
@@ -42,7 +42,7 @@
           </section>
           <section class="add-post">
             <div class="add-post__title">Информация на главной</div>
-            <textarea class="form-message" name="description" placeholder="Информация на главной"><?=$about->description?></textarea>
+            <textarea id="ckEditor" class="form-message" name="description" placeholder="Информация на главной"><?=$about->description?></textarea>
           </section>
           <section class="add-post">
             <input type="submit" name="aboutUpdate" class="button button-save" value="Сохранить">

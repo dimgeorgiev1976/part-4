@@ -53,6 +53,9 @@ form p {
 	display: inline-block;
 	font-weight: 600;
 }
+.inputfile + label * {
+  pointer-events: none;
+}
 
 .comment-post {
 	background-color: #f6f7f8;
@@ -406,4 +409,11 @@ table {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6;
+  }
+
+    .thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+    display:none;
   }

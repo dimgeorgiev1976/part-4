@@ -12,7 +12,7 @@
 				<img src="<?=$photo?>" alt=""/>
 			</div>
 		</div>
-		<div class="col-md-8 col-lg-9 resume-content">
+		<div class="col-md-8 col-lg-9 resume-content">  
 			<div class="resume-content--text">
 				<h1><?=$about->name?></h1>
 

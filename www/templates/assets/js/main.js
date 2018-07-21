@@ -6,4 +6,7 @@ $(document).ready(function() {
 		$('#deleteImgCheckBox')[0].checked = true;
 	})
 
+
+ CKEDITOR.replace( 'ckEditor' );
+ 
 });

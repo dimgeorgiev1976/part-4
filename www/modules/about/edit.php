@@ -24,7 +24,7 @@ if ( isset($_POST['aboutUpdate'])) {
 	if ( empty($errors)) {
 
 		$about->name = htmlentities($_POST['name']);
-		$about->description = htmlentities($_POST['description']);
+		$about->description = $_POST['description'];
 	
 
 		if ( isset($_FILES["photo"]["name"]) && $_FILES["photo"]["tmp_name"] != "" ) {

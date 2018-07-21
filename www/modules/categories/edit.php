@@ -16,7 +16,7 @@ $errors = array();
 if ( isset($_POST['catEdit'])) {
 
 	if ( trim($_POST['catTitle']) == '') {
-		$errors[] = ['catTitle' => 'Введите Название категории' ];
+		$errors[] = ['title' => 'Введите Название категории' ];
 	}
 
 

@@ -22,7 +22,7 @@ if ( isset($_POST['postUpdate'])) {
 
 	if ( empty($errors)) {
 		$post->title = htmlentities($_POST['postTitle']);
-		$post->text = htmlentities($_POST['postText']);
+		$post->text = $_POST['postText'];
 		$post->cat = htmlentities($_POST['cat']);
 
 		if ( isset($_FILES["postImg"]["name"]) && $_FILES["postImg"]["tmp_name"] != "" ) {

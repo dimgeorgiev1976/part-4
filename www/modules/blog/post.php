@@ -57,7 +57,7 @@ if ( isset($_POST['addComment'])) {
 		$comment = R::dispense('comments');
 		$comment->postId = htmlentities($_GET['id']);
 		$comment->userId = htmlentities($_SESSION['logged_user']['id']);
-		$comment->text = htmlentities($_POST['commentText']);
+		$comment->text = $_POST['commentText'];
 		$comment->dateTime = R::isoDateTime();
 		R::store($comment);
 		header('Location: ' . HOST . "blog/post?id=" . $_GET['id']);

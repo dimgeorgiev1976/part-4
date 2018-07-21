@@ -24,7 +24,8 @@
 	<?php } ?>
 
 	<?php if ( $message->message_file != '') { ?>
-		<div class="comment-user__file">Прикрепленные файлы: <a target="_blank" href="<?=HOST.'usercontent/upload_files/'.$message->message_file?>"><?=$message->message_file_name_original?></a></div>
+		<div class="comment-user__file">Прикрепленные файлы: <a target="_blank" href="<?=HOST.'usercontent/upload_files/'.$message->message_file?>">
+			<?=$message->message_file_name_original?></a></div>
 	<?php } ?>
 
 </div>

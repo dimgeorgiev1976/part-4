@@ -27,7 +27,7 @@ if ( isset($_POST['contactsUpdate'])) {
 
 		$contacts->email = htmlentities($_POST['email']);
 		$contacts->tel = htmlentities($_POST['tel']);
-		$contacts->address = htmlentities($_POST['address']);
+		$contacts->address = $_POST['address'];
 
 		$contacts->name = htmlentities($_POST['name']);
 		$contacts->secondname = htmlentities($_POST['secondname']);
@@ -36,6 +36,8 @@ if ( isset($_POST['contactsUpdate'])) {
 		$contacts->fb = htmlentities($_POST['fb']);
 		$contacts->github = htmlentities($_POST['github']);
 		$contacts->twitter = htmlentities($_POST['twitter']);
+		$contacts->lat = htmlentities($_POST['lat']);
+		$contacts->lng = htmlentities($_POST['lng']);
 
 		R::store($contacts);
 		header('Location: ' . HOST . "contacts");

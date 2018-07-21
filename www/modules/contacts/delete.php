@@ -5,8 +5,9 @@ if ( !isAdmin() ) {
 	die;
 }
 
-$mess = R::load('messages', $_GET["id"]);
+$mess = R::load('messages', 1);
 
+// $mess = R::load('messages', $_GET["id"]);
 
  if ( isset($_POST['messDelete'])) {
 		R::trash($mess);

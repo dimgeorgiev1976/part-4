@@ -29,7 +29,8 @@
 							
 							<div class="form-download__container"> 
 								<fieldset>
-									<input type="file" name="avatar" id="file" class="inputfile" data-multiple-caption="{count} файлов выбрано" multiple />
+									<input type="file" name="avatar" id="file" class="inputfile" 
+									data-multiple-caption="{count} файлов выбрано" multiple />
 									<label for="file">Выбрать файл</label> <span></span>
 								</fieldset>
 							</div>

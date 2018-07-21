@@ -73,7 +73,7 @@
 							method="POST" 
 							action="<?=HOST?>blog/post?id=<?=$post['id']?>" > 
 							<?php require ROOT. "templates/_parts/_errors.tpl" ?>
-							<textarea class="form-message" 
+							<textarea id="ckEditor" class="form-message" 
 								name="commentText" 
 								placeholder="Присоединиться к обсуждению..."></textarea>
 							<input type="submit" name="addComment" class="button button-regular" 

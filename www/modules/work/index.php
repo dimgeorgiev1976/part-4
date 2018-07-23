@@ -19,7 +19,7 @@ $jobs = R::find('jobs', 'ORDER BY id DESC');
 // Готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/about/_parts/_about-jobs.tpl";
+include ROOT . "templates/work/all-works.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

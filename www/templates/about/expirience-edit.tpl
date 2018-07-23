@@ -9,7 +9,8 @@
 			
 
 				<?php  foreach ($jobs as $job) {  ?>
-					<div class="work-item--admin"><a class="button button-delete" href="#"> Удалить </a>
+					<div class="work-item--admin"><a class="button button-delete" 
+						href="<?=HOST?>about/expirience-delete?id=<?=$job['id'];?>"> Удалить </a>
 						<div class="work-item__date"><?=$job->period?></div>
 						<div class="work-item-profile"><span 
 							class="work-item-profile__name"><?=$job->title?></span></div>

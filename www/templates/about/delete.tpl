@@ -1,7 +1,7 @@
 <div class="full-post">
 	<div class="container">
 		<div class="row">
-			<form action="<?=HOST?>expirience-edit?id=<?=$job['id']?>" method="POST" 
+			<form action="<?=HOST?>about/expirience-delete?id=<?=$job['id']?>" method="POST" 
 				enctype="multipart/form-data">
 			<div class="col">
 				<h1>Удалить работы</h1>

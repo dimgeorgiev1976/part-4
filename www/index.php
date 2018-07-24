@@ -106,7 +106,7 @@ switch ( $uri[0]) {
         break;
 
 
-    // ::::::::::::::::::: PAGES :::::::::::::::::::
+    // ::::::::::::::::::: About :::::::::::::::::::
 
     case 'about':
         include "modules/about/index.php";
@@ -120,19 +120,45 @@ switch ( $uri[0]) {
         include "modules/about/skills-edit.php";
         break;
 
-
-    // case 'expirience':
-    //     include "modules/works/index.php";
-    //     break;    
-
-        case 'expirience':
-        include "modules/about/expirience.php";
+    case 'expirience-edit':
+        include "modules/about/expirience-edit.php";
         break;
 
-    // case 'expirience-edit':
-    //     include "modules/about/expirience-edit.php";
-    //     break;
+   case 'about/expirience-delete':
+        include "modules/about/delete.php";
+        break;
 
+    // ::::::::::::::::::: WORK :::::::::::::::::::
+
+    case 'work':
+        include "modules/work/index.php";
+        break;   
+
+    case 'work-new':
+        include "modules/work/work-new.php";
+        break;  
+
+    case 'work-edit':
+        include "modules/work/edit.php";
+        break;  
+
+    case 'work-single':
+        include "modules/work/work-single.php";
+        break;  
+
+    case 'work-delete':
+        include "modules/work/delete.php";
+        break; 
+
+    case 'work/all-works':
+        include "modules/work/all-works.php";
+        break;
+
+
+
+
+
+    // ::::::::::::::::::: CONTACTS :::::::::::::::::::
     case 'contacts':
         include "modules/contacts/index.php";
         break;
@@ -148,6 +174,7 @@ switch ( $uri[0]) {
         include "modules/contacts/delete.php";
         break;
 
+    // ::::::::::::::::::: PAGES :::::::::::::::::::
 
 
 	default:

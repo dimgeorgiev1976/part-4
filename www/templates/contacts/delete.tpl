@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<form class="form-delete" action="
-			<?=HOST?>contacts-delete/?id=<?=$mess['id']?>" method="POST" 
+			<?=HOST?>contacts-delete?id=<?=$mess['id']?>" method="POST" 
 				enctype="multipart/form-data">
 							<div class="col">
 
@@ -13,7 +13,7 @@
 
 				<input type="submit" name="messDelete" 
 				class="button button-delete" value="Удалить">
-			 <a class="button button-regular" href="<?=HOST?>contacts">Отмена</a>
+			 <a class="button button-regular" href="<?=HOST?>messages">Отмена</a>
 			
 				
 			</div>

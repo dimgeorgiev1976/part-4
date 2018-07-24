@@ -5,28 +5,35 @@ if ( !isAdmin() ) {
 	die;
 }
 
-$about = R::load('about', 1);
+$cats = R::find('works', 'ORDER BY id DESC');
+
+// echo "<pre>";
+// print_r($_POST);
+// echo "</pre>";
 
 $errors = array();
 
 if ( isset($_POST['workUpdate'])) {
 
-	if ( trim($_POST['name']) == '') {
-		$errors[] = ['title' => 'Введите Имя' ];
+	if ( trim($_POST['workTitle']) == '') {
+		$errors[] = ['title' => 'Введите Название поста' ];
 	}
 
-	if ( trim($_POST['description']) == '') {
-		$errors[] = ['title' => 'Введите описание' ];
+	if ( trim($_POST['workText']) == '') {
+		$errors[] = ['text' => 'Введите Текст поста' ];
 	}
 
 	if ( empty($errors)) {
+		$post = R::dispense('posts');
+		$post->title = htmlentities($_POST['postTitle']);
+		$post->text = $_POST['postText'];
+		$post->date = time();
+		$post->authorId = $_SESSION['logged_user']['id'];
+		$post->dateTime = R::isoDateTime();
+		$post->cat = htmlentities($_POST['cat']);
 
-		$work->name = htmlentities($_POST['name']);
-		$work->description = $_POST['description'];
-
-
+		
 		if ( isset($_FILES["photo"]["name"]) && $_FILES["photo"]["tmp_name"] != "" ) {
-			
 			// Write file image params in variables
 			$fileName = $_FILES["photo"]["name"];
 			$fileTmpLoc = $_FILES["photo"]["tmp_name"];
@@ -35,7 +42,6 @@ if ( isset($_POST['workUpdate'])) {
 			$fileErrorMsg = $_FILES["photo"]["error"];
 			$kaboom = explode(".", $fileName);
 			$fileExt = end($kaboom);
-
 			// Check file propertties on different conditions
 			list($width, $height) = getimagesize($fileTmpLoc);
 			if($width < 10 || $height < 10){
@@ -50,19 +56,10 @@ if ( isset($_POST['workUpdate'])) {
 				$errors[] = 'An unknown error occurred';
 			}
 
-			// Поверям установлен ли аватар у пользователя
-			$photo = $work['photo'];
-			$avatarFolderLocation = ROOT . 'usercontent/portfolio/';
-
-			// Если аватар уже установлен, то есть загружен ранее то удаляем файл аватара
-			if($photo != ""){
-				$picurl = $avatarFolderLocation . $photo; 	
-				// Удаляем аватар
-			    if (file_exists($picurl)) { unlink($picurl); }
-			}
+			$postImgFolderLocation = ROOT . 'usercontent/blog/';
 
 			// Перемещаем загруженный файл в нужную директорию
-			$uploadfile = $avatarFolderLocation . $db_file_name;
+			$uploadfile = $postImgFolderLocation . $db_file_name;
 			$moveResult = move_uploaded_file($fileTmpLoc, $uploadfile);
 
 			if ($moveResult != true) {
@@ -71,23 +68,34 @@ if ( isset($_POST['workUpdate'])) {
 
 			include_once( ROOT . "/libs/image_resize_imagick.php");
 			
-			$target_file =  $avatarFolderLocation . $db_file_name;
-			$resized_file = $avatarFolderLocation . $db_file_name;
-			$wmax = 222;
-			$hmax = 222;
-			$img = createThumbnail($target_file, $wmax, $hmax);
+			$target_file =  $postImgFolderLocation . $db_file_name;
+			$resized_file = $postImgFolderLocation . $db_file_name;
+			$wmax = 920;
+			$hmax = 620;
+			$img = createThumbnailBig($target_file, $wmax, $hmax);
+			$img->writeImage($resized_file);
+			$work->postImg = $db_file_name;
+
+			$target_file =  $postImgFolderLocation . $db_file_name;
+			$resized_file = $postImgFolderLocation . "320-" . $db_file_name;
+			$wmax = 320;
+			$hmax = 140;
+			$img = createThumbnailCrop($target_file, $wmax, $hmax);
+
 			$img->writeImage($resized_file);
 
-			$work->photo = $db_file_name;
+			$work->postImgSmall = "320-" . $db_file_name;
 
 		}
 
 		R::store($work);
+
 		header('Location: ' . HOST . "work");
 		exit();
 	}
-
 }
+
+// $blogPost = ['title' => 'Заголовок поста', 'text' =>  'Текст поста'];
 
 // Готовим контент для центральной части
 ob_start();
@@ -100,6 +108,6 @@ ob_end_clean();
 include ROOT . "templates/_parts/_head.tpl";
 include ROOT . "templates/template.tpl";
 include ROOT . "templates/_parts/_footer.tpl";
-include ROOT . "templates/_parts/_foot.tpl";	
+include ROOT . "templates/_parts/_foot.tpl";
 
 ?>

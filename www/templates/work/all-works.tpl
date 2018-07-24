@@ -9,11 +9,9 @@
   <?php if ( isAdmin() ) { ?>
                 <div class="col-lg-3 col-md-4 portfolio-title--button">
                   <a class="button button-edit"
-                  href="<?=HOST?>work-edit"> Добавить работу </a>
+                  href="<?=HOST?>work-new"> Добавить работу </a>
            </div>
         <?php }  ?>
-
-
 
 
       </div>
@@ -21,7 +19,7 @@
         <div class="col-md-6 col-xl-4">
           <div class="card card-portfolio"><img class="card__img card-portfolio__img" 
             src="/usercontent/portfolio/portfolio-preview.png"/>
-            <h2 class="card__title">Верстка Landing Page</h2><a class="button button-regular" href="#"> Смотреть кейс </a>
+            <h2 class="card__title">Верстка Landing Page</h2><a class="button button-regular" href="<?=HOST?>work-single"> Смотреть кейс </a>
           </div>
         </div>
         <div class="col-md-6 col-xl-4">
@@ -33,7 +31,7 @@
         <div class="col-md-6 col-xl-4">
           <div class="card card-portfolio"><img class="card__img card-portfolio__img" 
             src="/usercontent/portfolio/internet-shops.jpg"/>
-            <h2 class="card__title">Верстка интернет магазина</h2><a class="button button-regular" href="#"> Смотреть кейс </a>
+            <h2 class="card__title">Верстка интернет магазина</h2><a class="button button-regular" hhref="<?=HOST?>work-single"> Смотреть кейс </a>
           </div>
         </div>
         <div class="col-md-6 col-xl-4">

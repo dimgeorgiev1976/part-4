@@ -10,7 +10,8 @@
 
 				<section class="add-post">
 					<div class="add-post__title">Название</div>
-					<input class="form-full-width" type="text" name="postTitle" placeholder="Введите имя" value="Новый пост"/>
+					<input class="form-full-width" type="text" name="postTitle" 
+					placeholder="Введите имя" value="Новый пост"/>
 				</section>
 
 
@@ -40,7 +41,8 @@
 				</section>
 				<section class="add-post">
 					<div class="add-post__title">Содержание</div>
-					<textarea id="ckEditor" class="form-message" name="postText" placeholder="Сообщение">Введите город</textarea>
+					<textarea id="ckEditor" class="form-message" name="postText" 
+					placeholder="Сообщение">Введите город</textarea>
 					<input type="submit" name="postNew" class="button button-save" value="Сохранить">
 					<a class="button button-regular" href="#"> Отмена </a>
 				</section>

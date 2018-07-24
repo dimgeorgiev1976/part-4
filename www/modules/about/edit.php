@@ -5,11 +5,9 @@ if ( !isAdmin() ) {
 	die;
 }
 
-$errors = array();
-
 $about = R::load('about', 1);
 
-
+$errors = array();
 
 if ( isset($_POST['aboutUpdate'])) {
 
@@ -25,7 +23,7 @@ if ( isset($_POST['aboutUpdate'])) {
 
 		$about->name = htmlentities($_POST['name']);
 		$about->description = $_POST['description'];
-	
+
 
 		if ( isset($_FILES["photo"]["name"]) && $_FILES["photo"]["tmp_name"] != "" ) {
 			
@@ -84,14 +82,12 @@ if ( isset($_POST['aboutUpdate'])) {
 
 		}
 
-
 		R::store($about);
 		header('Location: ' . HOST . "about");
 		exit();
 	}
 
 }
-
 
 // Готовим контент для центральной части
 ob_start();

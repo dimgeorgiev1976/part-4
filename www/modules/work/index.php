@@ -12,16 +12,16 @@ $jobs = R::find('jobs', 'ORDER BY id DESC');
 }
 
 
-// $blogPosts = ['Пост 1', 'Пост 2', 'Пост 3', 'Пост 4', 'Пост 5'];
+$worksSingle = ['Работа 1', 'Работа 2', 'Работа 3', 'Работа 4', 'Работа 5'];
 
-
-
-// Готовим контент для центральной части
+// Готовим контент для центральной части Карточек блога
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";
-include ROOT . "templates/work/all-works.tpl";
+include ROOT . "templates/work/work-all-works.tpl";
 $content = ob_get_contents();
 ob_end_clean();
+
+
 
 // Выводим шаблоны
 include ROOT . "templates/_parts/_head.tpl";

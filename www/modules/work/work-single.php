@@ -1,6 +1,6 @@
 <?php 
 
-$blogPost = ['title' => 'Заголовок поста', 'text' =>  'Текст поста'];
+$worksSingle = ['title' => 'Заголовок поста', 'text' =>  'Текст поста'];
 
 // $postId = $_GET['id'];
 // $post = R::load('posts', $postId);
@@ -21,7 +21,7 @@ $sql = '
 
 		WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1';
 $post = R::getAll( $sql );
-$post = $post[0];
+// $work = $work[0];
 
 
 // $comments = R::findAll('comments', "post_id = $postId ORDER BY id DESC");
@@ -67,7 +67,8 @@ if ( isset($_POST['addComment'])) {
 
 // Готовим контент для центральной части
 ob_start();
-include ROOT . "templates/blog/work-single.tpl";
+include ROOT . "templates/_parts/_header.tpl";
+include ROOT . "templates/work/work-single.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

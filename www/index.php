@@ -154,9 +154,9 @@ switch ( $uri[0]) {
         include "modules/work/all-works.php";
         break;
 
-
-
-
+    case 'work/work-single':
+        include "modules/work/work-single.php";
+        break;
 
     // ::::::::::::::::::: CONTACTS :::::::::::::::::::
     case 'contacts':

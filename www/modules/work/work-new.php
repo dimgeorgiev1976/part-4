@@ -5,7 +5,7 @@ if ( !isAdmin() ) {
 	die;
 }
 
-$cats = R::find('categories', 'ORDER BY id DESC');
+// $cats = R::find('categories', 'ORDER BY id DESC');
 
 // echo "<pre>";
 // print_r($_POST);
@@ -13,7 +13,7 @@ $cats = R::find('categories', 'ORDER BY id DESC');
 
 $errors = array();
 
-if ( isset($_POST['postNew'])) {
+if ( isset($_POST['workNew'])) {
 
 	if ( trim($_POST['workTitle']) == '') {
 		$errors[] = ['title' => 'Введите Название работы' ];
@@ -38,7 +38,7 @@ if ( isset($_POST['postNew'])) {
 		$work->date = time();
 		$work->authorId = $_SESSION['logged_user']['id'];
 		$work->dateTime = R::isoDateTime();
-		$work->cat = htmlentities($_POST['cat']);
+		// $work->cat = htmlentities($_POST['cat']);
 
 		if ( isset($_FILES["workImg"]["name"]) && $_FILES["workImg"]["tmp_name"] != "" ) {
 			
@@ -104,7 +104,8 @@ if ( isset($_POST['postNew'])) {
 	}
 }
 
-// $blogPost = ['title' => 'Заголовок поста', 'text' =>  'Текст поста'];
+// $workSingle = ['title' => 'Заголовок pаботy','text' =>  'Текст pаботy'];
+
 
 // Готовим контент для центральной части
 ob_start();

@@ -1,6 +1,8 @@
 <?php 
 
-$worksSingle = ['title' => 'Заголовок поста', 'text' =>  'Текст поста'];
+$workSingle = ['title' => 'Заголовок 
+pаботy', 'text' =>  'Текст 
+pаботy'];
 
 // $postId = $_GET['id'];
 // $post = R::load('posts', $postId);
@@ -67,7 +69,6 @@ if ( isset($_POST['addComment'])) {
 
 // Готовим контент для центральной части
 ob_start();
-include ROOT . "templates/_parts/_header.tpl";
 include ROOT . "templates/work/work-single.tpl";
 $content = ob_get_contents();
 ob_end_clean();

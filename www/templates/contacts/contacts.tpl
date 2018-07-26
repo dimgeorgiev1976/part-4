@@ -84,7 +84,8 @@
 		 <input class="form-name form-name-fullScreen" type="text" name="email" placeholder="Введите Email"/>
 	   </div>
 	   <div class="input-error-message">
-		 <textarea class="form-message mod_form-message--contacts-admin" name="message" placeholder="Сообщение"></textarea>
+		 <textarea class="form-message mod_form-message--contacts-admin" name="message" 
+		 placeholder="Сообщение"></textarea>
 	   </div>
 	   <h5 class="form_btn-up-wrap"> Прикрепить файл</h5>
 	   <div class="form-download">

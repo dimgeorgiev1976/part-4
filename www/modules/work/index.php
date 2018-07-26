@@ -4,15 +4,16 @@
 
 
 
-if ( @$_GET['cat_id'] != '') {
-	$posts = R::find('posts', 'cat = ' . $_GET['cat_id'] . ' ORDER BY id DESC' );
+// if ( @$_GET['cat_id'] != '') {
+// 	$works = R::find('posts', 'cat = ' . $_GET['cat_id'] . ' ORDER BY id DESC' );
 
-} else {
-$jobs = R::find('jobs', 'ORDER BY id DESC');
-}
+// } else {
+$works = R::find('works', 'ORDER BY id DESC');
+// }
 
 
-$worksSingle = ['Работа 1', 'Работа 2', 'Работа 3', 'Работа 4', 'Работа 5'];
+
+// $workSingle = ['Работа 1', 'Работа 2', 'Работа 3', 'Работа 4', 'Работа 5'];
 
 // Готовим контент для центральной части Карточек блога
 ob_start();

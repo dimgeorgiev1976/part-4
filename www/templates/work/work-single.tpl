@@ -1,3 +1,11 @@
+<?php 
+// Вывод админ панели для Администратора
+if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
+  if ($_SESSION['role'] == 'admin') {
+    include ROOT . "templates/_parts/_admin-panel.tpl";
+  }
+}
+?>
 
   <div class="container-work-page--individual">
     <div class="header-user__logo-brand">
@@ -14,8 +22,8 @@
     </div>
     <div class="container">
       <div class="row justify-content-md-end container-work-title">
-        <div class="col-lg-9 col-md-8 work-wrap">         
-          <div class="work-title">Верстка и frontend Интернет магазина</div>
+        <div class="col-lg-9 col-md-8 work-wrap">
+          <div class="work-title"><?=$workSingle['title']?></div>
         </div>
         <div class="col-lg-2 col-md-3 work-wrap"> <a class="button button-edit" href="#"> Редактировать </a>
         </div>
@@ -27,12 +35,13 @@
             <div class="work-location"> <a href="#">Работы</a></div>
             <div class="work-date-download">16 Марта 2018   </div>
           </div>
-          <div class="work-project"><img src="/usercontent/portfolio/img-project.jpg"/></div>
+          <div class="work-project"><img img src="/usercontent/portfolio/img-project.jpg"/></div>
         </div>
       </div>
       <div class="row justify-content-md-center">
         <div class="col-md-5 work-contant">
           <div class="title3">Кратко о проекте</div>
+          <?=$workSingle['text']?>
           <p>Сделана верстка и фронтэнд для интернет магазина мебели. Сверстано более 50-ти страниц. Сделаны все эффекты и интерактив. В работе использованы препроцессоры pug и less. Интерактив написан на JavaScript. Весь проект протестирован на своместимость, начиная с IE9. Для старых браузеров использован подход Graceful Degradation.</p>
           <div class="title6">Время работы над проектом: 6 недель</div>
           <div class="title6">Страниц сверстано: 52 страницы</div>

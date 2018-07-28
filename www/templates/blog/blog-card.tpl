@@ -2,7 +2,8 @@
 	<div class="card card-post">
 
 		<?php if ( $post['post_img_small'] != "" ) {?>
-			<img class="full-post__img" src="<?=HOST?>usercontent/blog/<?=$post['post_img_small']?>" alt="<?=$post['title']?>"/>
+			<img class="full-post__img" src="<?=HOST?>usercontent/blog/<?=$post['post_img_small']?>" 
+			alt="<?=$post['title']?>"/>
 		<?php } else {?>
 			<img class="full-post__img" src="<?=HOST?>usercontent/blog/no-image.jpg" alt="<?=$post['title']?>"/>
 		<?php } ?>

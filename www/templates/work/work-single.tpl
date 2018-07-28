@@ -23,7 +23,7 @@ if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
     <div class="container">
       <div class="row justify-content-md-end container-work-title">
         <div class="col-lg-9 col-md-8 work-wrap">
-          <div class="work-title"><?=$workSingle['title']?></div>
+          <div class="work-title"><?=$work['title']?></div>
         </div>
         <div class="col-lg-2 col-md-3 work-wrap"> <a class="button button-edit" href="#"> Редактировать </a>
         </div>
@@ -33,21 +33,28 @@ if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
           <div class="work-information">
             <div class="work-autor">Емельян Казаков</div>
             <div class="work-location"> <a href="#">Работы</a></div>
-            <div class="work-date-download">16 Марта 2018   </div>
+                <div class="comment__date">
+        <?php echo rus_date("j F Y H:i ", strtotime($work['date_time'])); ?>
+         </div>
           </div>
-          <div class="work-project"><img img src="/usercontent/portfolio/img-project.jpg"/></div>
+          <div class="work-project">
+       <?php if ( $work['work_img'] != "" ) {?>
+          <img class="full-post__img" src="<?=HOST?>usercontent/portfolio/<?=$work['work_img']?>" 
+          alt="<?=$work['title']?>"/>
+        <?php } ?>
+      </div>
         </div>
+       
       </div>
       <div class="row justify-content-md-center">
         <div class="col-md-5 work-contant">
           <div class="title3">Кратко о проекте</div>
-          <?=$workSingle['text']?>
-          <p>Сделана верстка и фронтэнд для интернет магазина мебели. Сверстано более 50-ти страниц. Сделаны все эффекты и интерактив. В работе использованы препроцессоры pug и less. Интерактив написан на JavaScript. Весь проект протестирован на своместимость, начиная с IE9. Для старых браузеров использован подход Graceful Degradation.</p>
+          <?=$work['text']?>
           <div class="title6">Время работы над проектом: 6 недель</div>
           <div class="title6">Страниц сверстано: 52 страницы</div>
           <div class="title6">Бюджет проекта: до 60 000 рублей</div>
           <div class="title3">Результат</div>
-          <p>Проект сделан в срок. Заказчик доволен. Сайт запущен, работает и уже радует покупками посетителей и владельцев бизнеса.</p>
+          <?=$work['result']?>
         </div>
         <div class="col-md-5 work-contant">
           <div class="title3">Технологии</div>
@@ -57,13 +64,17 @@ if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
             <li class="work-technology-list-item">Less, Pug, Gulp, npm, bower.</li>
           </ul>
           <div class="title3">Ссылка на проект</div>
-          <p class="work-link-projects"><a href="http://magnum-store.ru">http://magnum-store.ru</a></p>
+          <p class="work-link-projects"><a href="http://magnum-store.ru"><?=$work['link']?></a></p>
           <div class="title3">Код на github</div>
-          <p class="work-link-projects"><a href="https://github.com/pozitive/magnumstore/">https://github.com/pozitive/magnumstore/</a></p>
+          <p class="work-link-projects"><a href="https://github.com/pozitive/magnumstore/"><?=$work['github']?></a></p>
         </div>
       </div>
       <div class="row justify-content-md-center">
-        <div class="col-md-10 work-container-button"><a class="button button-regular" href="#"> <span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Все работы </a><a class="button button-regular" href="#"> Следующая работа  <span class="button__small-fa-icon"><i class="fas fa-arrow-right"></i></span></a>
+        <div class="col-md-10 work-container-button"><a class="button button-regular" href="#">
+         <span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Все работы </a><a class="button button-regular" 
+         href="#"> Следующая работа  <span class="button__small-fa-icon"><i class="fas fa-arrow-right"></i></span></a>
+
+
         </div>
       </div>
     </div>

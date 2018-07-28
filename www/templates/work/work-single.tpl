@@ -31,9 +31,14 @@ if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
       <div class="row justify-content-md-center">
         <div class="col-md-10 work-wrap">
           <div class="work-information">
-            <div class="work-autor">Емельян Казаков</div>
+
+            <div class="work-autor">
+      <?=$work['name']?>
+      <?=$work['secondname']?>
+          </div>
+
             <div class="work-location"> <a href="#">Работы</a></div>
-                <div class="comment__date">
+                <div class="comment__date"><i class="far fa-clock"></i>
         <?php echo rus_date("j F Y H:i ", strtotime($work['date_time'])); ?>
          </div>
           </div>

@@ -39,6 +39,7 @@ if ( isset($_POST['workNew'])) {
 		$work->technologies = htmlentities($_POST['workTech']);
 		$work->link = htmlentities($_POST['workLink']);
 		$work->github = htmlentities($_POST['gitHub']);
+		$work->authorId = $_SESSION['logged_user']['id'];
 
 		$work->date = time();
 		$work->authorId = $_SESSION['logged_user']['id'];

@@ -26,7 +26,11 @@ $post = $post[0];
 
 // $comments = R::findAll('comments', "post_id = $postId ORDER BY id DESC");
 
-$sql = 'SELECT comments.text, comments.date_time, comments.user_id, users.name, users.secondname, users.avatar_small FROM comments INNER JOIN users ON comments.user_id = users.id WHERE comments.post_id = ' . $_GET['id'] ;
+$sql = 'SELECT comments.text, comments.date_time, 
+comments.user_id, users.name, users.secondname, 
+users.avatar_small FROM comments INNER JOIN users 
+ON comments.user_id = users.id WHERE 
+comments.post_id = ' . $_GET['id'] ;
 $comments = R::getAll( $sql );
 
 // echo "<pre>";

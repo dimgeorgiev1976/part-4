@@ -1,11 +1,10 @@
 <?php 
 
-$workSingle = ['title' => 'Заголовок 
-pаботy', 'text' =>  'Текст 
-pаботy'];
+// $workSingle = ['title' => 'Заголовок pаботy', 'title' =>  'Текст pаботy',
+// 'description' => 'Введите Oписание работы', 'tech' =>  'Введите Teхнологии работы'];
 
-// $postId = $_GET['id'];
-// $post = R::load('posts', $postId);
+$workId = $_GET['id'];
+$work = R::load('works', $workId);
 
 $sql = '
 		SELECT 	
@@ -47,25 +46,7 @@ $comments = R::getAll( $sql );
 // echo($_SESSION['logged_user']['id']);
 // echo "</pre>";
 
-$errors = array();
 
-if ( isset($_POST['addComment'])) {
-
-	if ( trim($_POST['commentText']) == '') {
-		$errors[] = ['title' => 'Введите текст комментария' ];
-	}
-
-	if ( empty($errors)) {
-		$comment = R::dispense('comments');
-		$comment->postId = htmlentities($_GET['id']);
-		$comment->userId = htmlentities($_SESSION['logged_user']['id']);
-		$comment->text = $_POST['commentText'];
-		$comment->dateTime = R::isoDateTime();
-		R::store($comment);
-		header('Location: ' . HOST . "blog/post?id=" . $_GET['id']);
-		exit();
-	}
-}
 
 // Готовим контент для центральной части
 ob_start();

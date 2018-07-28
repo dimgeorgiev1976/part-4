@@ -20,21 +20,26 @@ if ( isset($_POST['workNew'])) {
 	}
 
 	if ( trim($_POST['workText']) == '') {
-		$errors[] = ['text' => 'Введите Текст работы' ];
+		$errors[] = ['title' => 'Введите Текст работы' ];
 	}
 
 		if ( trim($_POST['workDone']) == '') {
-		$errors[] = ['text' => 'Введите Oписание работы' ];
+		$errors[] = ['title' => 'Введите Oписание работы' ];
 	}
 
 		if ( trim($_POST['workTech']) == '') {
-		$errors[] = ['text' => 'Введите Teхнологии работы' ];
+		$errors[] = ['title' => 'Введите Teхнологии работы' ];
 	}
 
 	if ( empty($errors)) {
 		$work = R::dispense('works');
 		$work->title = htmlentities($_POST['workTitle']);
 		$work->text = $_POST['workText'];
+		$work->result = htmlentities($_POST['workDone']);
+		$work->technologies = htmlentities($_POST['workTech']);
+		$work->link = htmlentities($_POST['workLink']);
+		$work->github = htmlentities($_POST['gitHub']);
+
 		$work->date = time();
 		$work->authorId = $_SESSION['logged_user']['id'];
 		$work->dateTime = R::isoDateTime();
@@ -64,11 +69,11 @@ if ( isset($_POST['workNew'])) {
 			} else if ($fileErrorMsg == 1) {
 				$errors[] = 'An unknown error occurred';
 			}
+			
+			$workImgFolderLocation = ROOT . 'usercontent/portfolio/';
 
-			$postImgFolderLocation = ROOT . 'usercontent/portfolio/';
-
-			// Перемещаем загруженный файл в нужную директорию
-			$uploadfile = $postImgFolderLocation . $db_file_name;
+				// Перемещаем загруженный файл в нужную директорию
+			$uploadfile = $workImgFolderLocation . $db_file_name;
 			$moveResult = move_uploaded_file($fileTmpLoc, $uploadfile);
 
 			if ($moveResult != true) {
@@ -77,23 +82,24 @@ if ( isset($_POST['workNew'])) {
 
 			include_once( ROOT . "/libs/image_resize_imagick.php");
 			
-			$target_file =  $postImgFolderLocation . $db_file_name;
-			$resized_file = $postImgFolderLocation . $db_file_name;
-			$wmax = 920;
-			$hmax = 620;
+			$target_file =  $workImgFolderLocation . $db_file_name;
+			$resized_file = $workImgFolderLocation . $db_file_name;
+			$wmax = 570;
+			$hmax = 330;
 			$img = createThumbnailBig($target_file, $wmax, $hmax);
 			$img->writeImage($resized_file);
+
 			$work->workImg = $db_file_name;
 
-			$target_file =  $postImgFolderLocation . $db_file_name;
-			$resized_file = $postImgFolderLocation . "320-" . $db_file_name;
+			$target_file =  $workImgFolderLocation . $db_file_name;
+			$resized_file = $workImgFolderLocation . "320-" . $db_file_name;
 			$wmax = 320;
 			$hmax = 140;
 			$img = createThumbnailCrop($target_file, $wmax, $hmax);
 
 			$img->writeImage($resized_file);
 
-			$work->postImgSmall = "320-" . $db_file_name;
+			$work->workImgSmall = "320-" . $db_file_name;
 
 		}
 

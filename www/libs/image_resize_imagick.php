@@ -56,10 +56,10 @@ function createThumbnailBig($imagePath, $cropWidth, $cropHeight){
 		$imagick->thumbnailImage($cropWidth, 0);
 	} else {
 		// Для высоких картинок
-		// $imagick->thumbnailImage($cropWidth, 0);
-		// $imagick->cropThumbnailImage($cropWidth, $cropHeight);
+		$imagick->thumbnailImage($cropWidth, 0);
+		$imagick->cropThumbnailImage($cropWidth, $cropHeight);
 		
-		$imagick->thumbnailImage(0, $cropHeight);
+		// $imagick->thumbnailImage(0, $cropHeight);
 	}
 
 	return $imagick;

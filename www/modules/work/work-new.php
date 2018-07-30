@@ -34,14 +34,11 @@ if ( isset($_POST['workNew'])) {
 	if ( empty($errors)) {
 		$work = R::dispense('works');
 		$work->title = htmlentities($_POST['workTitle']);
-		$work->text = $_POST['workText'];
+		$work->text = htmlentities($_POST['workText']);
 		$work->result = htmlentities($_POST['workDone']);
-		$work->technologies = htmlentities($_POST['workTech']);
+		$work->technologies = $_POST['workTech'];
 		$work->link = htmlentities($_POST['workLink']);
 		$work->github = htmlentities($_POST['gitHub']);
-		$work->authorId = $_SESSION['logged_user']['id'];
-
-		$work->date = time();
 		$work->authorId = $_SESSION['logged_user']['id'];
 		$work->dateTime = R::isoDateTime();
 		// $work->cat = htmlentities($_POST['cat']);

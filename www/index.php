@@ -138,12 +138,12 @@ switch ( $uri[0]) {
         include "modules/work/work-new.php";
         break;  
 
-    case 'work-edit':
-        include "modules/work/edit.php";
+    case 'work/work-edit':
+        include "modules/work/work-edit.php";
         break;  
 
-    case 'work-delete':
-        include "modules/work/delete.php";
+    case 'work/work-delete':
+        include "modules/work/work-delete.php";
         break; 
 
     case 'work/all-works':

@@ -25,7 +25,12 @@ if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
         <div class="col-lg-9 col-md-8 work-wrap">
           <div class="work-title"><?=$work['title']?></div>
         </div>
-        <div class="col-lg-2 col-md-3 work-wrap"> <a class="button button-edit" href="#"> Редактировать </a>
+        <div class="col-lg-2 col-md-3 work-wrap"> 
+
+              <?php if ( isAdmin() ) { ?>
+          <a class="button button-edit" 
+          href="<?=HOST?>work/work-edit?id=<?=$work['id']?>"> Редактировать </a>
+            <?php }  ?>
         </div>
       </div>
       <div class="row justify-content-md-center">

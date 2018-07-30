@@ -10,7 +10,8 @@
 
 				<section class="add-post">
 					<div class="add-post__title">Название</div>
-					<input value="<?=$post->title?>" class="form-full-width" type="text" name="postTitle" placeholder="Введите имя" />
+					<input value="<?=$post->title?>" class="form-full-width" type="text" 
+					name="postTitle" placeholder="Введите имя" />
 				</section>
 
 				<section class="add-post">
@@ -35,11 +36,18 @@
 
 						<div class="form-download__container"> 
 							<fieldset>
-								<input type="file" name="postImg" id="postImg" class="inputfile" data-multiple-caption="{count} файлов выбрано" multiple />
+								<input type="file" name="postImg" id="postImg" 
+								class="inputfile" data-multiple-caption="{count} файлов выбрано" multiple />
 								<label for="postImg">Выбрать файл</label> <span></span>
 							</fieldset>
 						</div>
 
+		<?php
+// echo "<pre>";
+// print_r($_GET['id']);
+// echo "</pre>";
+
+?>
 						<?php if ( $post->post_img != "" ) {?>
 
 							<div class="form-download__preview">
@@ -48,7 +56,9 @@
 							    	<a class="testBtn" id="deletePostImg" >Удалить</a>
 							    </div>
 							    <div class="form-download__image-container">
-							    	<img class="card__img card-post__img" src="<?=HOST?>usercontent/blog/<?=$post['post_img_small']?>" alt="<?=$post['title']?>"/>
+							    	<img class="card__img card-post__img" 
+							    	src="<?=HOST?>usercontent/blog/<?=$post['post_img_small']?>" 
+							    	alt="<?=$post['title']?>"/>
 							    </div>
 							  </div>
 							</div>
@@ -64,7 +74,8 @@
 				</section>
 				<section class="add-post">
 					<div class="add-post__title">Содержание</div>
-					<textarea id="ckEditor" class="form-message" name="postText" placeholder="Сообщение"><?=$post->text?></textarea>
+					<textarea id="ckEditor" class="form-message" name="postText" 
+					placeholder="Сообщение"><?=$post->text?></textarea>
 					<input type="submit" name="postUpdate" class="button button-save" value="Сохранить">
 					<a class="button button-regular" href="<?=HOST?>blog/post?id=<?=$post->id?>"> Отмена </a>
 				</section>

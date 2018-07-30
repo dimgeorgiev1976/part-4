@@ -30,6 +30,9 @@ if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
               <?php if ( isAdmin() ) { ?>
           <a class="button button-edit" 
           href="<?=HOST?>work/work-edit?id=<?=$work['id']?>"> Редактировать </a>
+          <a class="button button-delete" 
+          href="<?=HOST?>work/work-delete?id=<?=$work['id'];?>">Удалить</a>
+
             <?php }  ?>
         </div>
       </div>
@@ -38,11 +41,10 @@ if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
           <div class="work-information">
 
             <div class="work-autor">
-      <?=$work['name']?>
-      <?=$work['secondname']?>
+        <?=$work['name']?>
+        <?=$work['secondname']?>
           </div>
-
-            <div class="work-location"> <a href="#">Работы</a></div>
+            <div class="work-location"> <a href="<?=HOST?>work">Работы</a></div>
                 <div class="comment__date"><i class="far fa-clock"></i>
         <?php echo rus_date("j F Y H:i ", strtotime($work['date_time'])); ?>
          </div>

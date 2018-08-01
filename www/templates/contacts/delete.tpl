@@ -2,16 +2,16 @@
 	<div class="container">
 		<div class="row">
 			<form class="form-delete" action="
-			<?=HOST?>contacts-delete?id=<?=$mess['id']?>" method="POST" 
+			<?=HOST?>contacts-delete?id=<?=$messages['id']?>" method="POST" 
 				enctype="multipart/form-data">
 							<div class="col">
 
 							<h1>Удалить сообщение</h1>
 
 				Вы действительно хотите удалить сообщение 
-				с id = <strong><?=$mess['id']?></strong> ?
+				с id = <strong><?=$messages['id']?></strong> ?
 
-				<input type="submit" name="messDelete" 
+				<input type="submit" name="msgDelete" 
 				class="button button-delete" value="Удалить">
 			 <a class="button button-regular" href="<?=HOST?>messages">Отмена</a>
 			

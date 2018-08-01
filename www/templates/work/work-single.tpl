@@ -94,7 +94,9 @@ echo "</pre>";
           href="<?=HOST?>work">
          <span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Все работы </a><a 
          class="button button-regular" 
-                    href="<?=HOST?>work/work-single?id=<?=$work['id'];?>"> Следующая работа  
+         href="<?=HOST?>work/work-single?id=<?=($work['id'] < $next) ?
+                 ($work['id'] + 1) : ($work['id'] + 1 - $next)?>"> Следующая работа
+
                     <span class="button__small-fa-icon"><i 
 
                    class="fas fa-arrow-right"></i></span></a>

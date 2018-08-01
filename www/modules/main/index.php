@@ -2,14 +2,11 @@
 
 $about = R::findOne('about', 1);
 $posts = R::find('posts', 'ORDER BY id DESC LIMIT 3');
-$jobs = R::find('jobs', 'ORDER BY id DESC LIMIT 3');
+$works = R::find('works', 'ORDER BY id DESC LIMIT 3');
+
 // echo "<pre>";
-// print_r($jobs); 
+// print_r($work); 
 // echo "</pre>";
-
-// $aboutName = $details[1]['name'];
-// $aboutDescription = $details[1]['description'];
-
 
 $title = "Главная";
 $content ="Содержимое главной страницы";

@@ -16,6 +16,14 @@ if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
         <div class="header-user__brandname">
           <h1>Digital Lyfestyle</h1>
         </div>
+
+<!--         <?php 
+
+echo "<pre>";
+print_r($work);
+echo "</pre>";
+
+         ?> -->
         <div class="header-user__brand-desc">
           <p>Сайт IT специалиста</p>
         </div></a>
@@ -82,11 +90,14 @@ if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
         </div>
       </div>
       <div class="row justify-content-md-center">
-        <div class="col-md-10 work-container-button"><a class="button button-regular" href="#">
-         <span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Все работы </a><a class="button button-regular" 
-         href="#"> Следующая работа  <span class="button__small-fa-icon"><i class="fas fa-arrow-right"></i></span></a>
+        <div class="col-md-10 work-container-button"><a class="button button-regular" 
+          href="<?=HOST?>work">
+         <span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Все работы </a><a 
+         class="button button-regular" 
+                    href="<?=HOST?>work/work-single?id=<?=$work['id'];?>"> Следующая работа  
+                    <span class="button__small-fa-icon"><i 
 
-
+                   class="fas fa-arrow-right"></i></span></a>
         </div>
       </div>
     </div>

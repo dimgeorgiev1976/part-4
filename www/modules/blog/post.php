@@ -23,7 +23,6 @@ $sql = '
 $post = R::getAll( $sql );
 $post = $post[0];
 
-
 // $comments = R::findAll('comments', "post_id = $postId ORDER BY id DESC");
 
 $sql = 'SELECT comments.text, comments.date_time, 
@@ -33,22 +32,23 @@ ON comments.user_id = users.id WHERE
 comments.post_id = ' . $_GET['id'] ;
 $comments = R::getAll( $sql );
 
+$Next = 'Select max(`id`) as `max_id` from `posts`';
+$next = R::getAll( $Next );
+$next= $next[0];
+$next = $next['max_id'];
+
+$Prev = 'Select min(`id`) as `min_id` from `posts`';
+ $prev = R::getAll( $Prev );
+ $prev = $prev[0];
+  $prev = $prev['min_id'];
+
 // echo "<pre>";
-// print_r($comments);
+// print_r($Next);
 // echo "</pre>";
 
 // echo "<pre>";
 // print_r($_GET);
 // echo "</pre>";
-
-// echo "<pre>";
-// print_r($_POST);
-// echo "</pre>";
-
-// echo "<pre>";
-// echo($_SESSION['logged_user']['id']);
-// echo "</pre>";
-
 $errors = array();
 
 if ( isset($_POST['addComment'])) {

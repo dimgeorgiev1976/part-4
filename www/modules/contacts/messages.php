@@ -12,8 +12,6 @@ if ( !isAdmin() ) {
 	$messages = R::find('messages', ' ORDER BY id DESC' );
 
 
-// $blogPosts = ['Пост 1', 'Пост 2', 'Пост 3', 'Пост 4', 'Пост 5'];
-
 
 
 // Готовим контент для центральной части

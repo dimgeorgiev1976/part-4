@@ -3,7 +3,7 @@
 
 
 <div class="comment-user mb-20"><a class="button button-delete" 
-	href="<?=HOST?>contacts-delete"> Удалить </a>
+	href="<?=HOST?>contacts-delete?id=<?=$message['id'];?>"> Удалить </a>
 
 	<div class="comment-user__date">	
 		<?php echo rus_date("j F Y H:i ", strtotime($message['date_time'])); ?>

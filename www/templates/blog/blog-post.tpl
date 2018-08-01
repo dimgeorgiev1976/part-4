@@ -41,14 +41,16 @@
 				<?php } ?>
 					
 				<?=$post['text']?>
-			</article>
-			<div class="full-post__next-prew"><a class="button button-regular" href="#"> 
-				<span class="button__small-fa-icon"><i class="fas fa-arrow-left">
-					
-				</i></span>Назад  </a><a class="button button-regular" 
-				href="#"> Вперед  <span class="button__small-fa-icon">
-					<i class="fas fa-arrow-right"></i></span></a>
-			</div>
+				</article>
+						<div class="full-post__next-prew"><a class="button button-regular" 
+								href="<?=HOST?>blog/post?id=<?=($post['id'] > $prev) ? ($post['id'] - 1) : ($post['id']-1 + $prev)?>">
+								<span class="button__small-fa-icon"><i class="fas fa-arrow-left">					
+					</i></span>Назад  </a><a class="button button-regular" 
+								href="<?=HOST?>blog/post?id=<?=($post['id'] < $next) ? 
+									($post['id'] + 1) : ($post['id'] + 1 - $next)?>"> Вперед 
+							 <span class="button__small-fa-icon">
+							<i class="fas fa-arrow-right"></i></span></a>
+						</div>
 
 			<?php 	if ( count($comments) > 0) {  ?>
 				<h2 id="comments"><?php commentNumber( count($comments) ); ?></h2>

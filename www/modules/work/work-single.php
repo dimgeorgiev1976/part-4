@@ -16,7 +16,10 @@ $work = R::getAll( $sql );
 $work = $work[0];
 
 // $work = R::findAll('works', "work_id = $workId ORDER BY id DESC");
-
+$Next = 'Select max(`id`) as `max_id` from `works`';
+$next = R::getAll( $Next );
+$next= $next[0];
+$next = $next['max_id'];
 
 // echo "<pre>";
 // print_r($works);

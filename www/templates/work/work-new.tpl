@@ -40,8 +40,8 @@
           <input class="form-full-width" type="text" name="gitHub" 
            placeholder="https://github.com/"/>
 
-      <div class="add-post__title add-work__title">Технологии
-            <textarea id="ckEditor" class="form-message" name="workTech" placeholder="Введите описание"></textarea>
+      <div class="add-post__title add-work__title">Технологии pаботы
+            <textarea id="ckEditor" class="form-message" name="workData" placeholder="Введите описание"></textarea>
             <input class="form-name" type="text" name="YourName" placeholder="Введите имя"/>
             <input class="form-name" type="text" name="YourName" placeholder="Введите имя"/>
              <input type="submit" name="workNew" class="button button-save" 

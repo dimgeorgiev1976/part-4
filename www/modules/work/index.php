@@ -4,12 +4,9 @@
 
 
 
-// if ( @$_GET['cat_id'] != '') {
-// 	$works = R::find('posts', 'cat = ' . $_GET['cat_id'] . ' ORDER BY id DESC' );
 
-// } else {
 $works = R::find('works', 'ORDER BY id DESC');
-// }
+
 
 
 

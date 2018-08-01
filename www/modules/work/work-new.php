@@ -36,6 +36,7 @@ if ( isset($_POST['workNew'])) {
 		$work->title = htmlentities($_POST['workTitle']);
 		$work->text = htmlentities($_POST['workText']);
 		$work->result = htmlentities($_POST['workDone']);
+		$work->database = htmlentities($_POST['workData']);
 		$work->technologies = $_POST['workTech'];
 		$work->link = htmlentities($_POST['workLink']);
 		$work->github = htmlentities($_POST['gitHub']);

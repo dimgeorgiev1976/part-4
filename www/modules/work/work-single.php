@@ -6,7 +6,6 @@
 // $workId = $_GET['id'];
 // $work = R::load('works', $workId);
 
-
 $sql = 'SELECT works.id, works.title, works.text, works.work_img, works.result, 
 works.technologies, works.link,works.github, works.date_time, works.author_id,
 users.name, users.secondname

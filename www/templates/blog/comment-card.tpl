@@ -1,7 +1,11 @@
 
 <div class="comment">
 	<div class="avatar avatar-small comment__avatar">
-		<img src="<?=HOST?>usercontent/avatar/<?=$comment['avatar_small']?>" alt="image"/>
+		<?php if ( $_SESSION['logged_user']['avatarSmall'] == "" ) { ?>
+					<img src="<?=HOST?>templates/assets/img/placeholders/user-avatar-placeholder-small.jpg" alt="image"/>
+				<?php } else { ?>
+					<img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatarSmall']?>" alt="image"/>
+				<?php } ?>
 	</div>
 	<div class="comment__info__user_date">
 		<div class="comment__user_name">

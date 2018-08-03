@@ -7,12 +7,9 @@
 				<section class="add-post">
 					<div class="add-post__title">Название категории</div>
 					<input class="form-full-width" type="text" name="catTitle" placeholder="Введите название категории" />
-				</section>
-
 				<input type="submit" name="catNew" class="button button-save" value="Сохранить">
 				<a class="button button-regular" href="<?=HOST?>blog/categories"> Отмена </a>
-			
-				
+				 </section> 
 			</div>
 			</form>
 		</div>

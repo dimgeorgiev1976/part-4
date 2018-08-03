@@ -5,7 +5,7 @@
 				enctype="multipart/form-data">
 			<div class="col">
 				<h1>Удалить категорию</h1>
-
+				
 				Вы действительно хотите удалить категорию 
 				<strong><?=$cat['cat_title']?></strong>  с id = 
 				<strong><?=$cat['id']?></strong> ?

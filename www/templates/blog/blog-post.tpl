@@ -65,7 +65,12 @@
 					<div class="comment-post__title">Оставить комментарий</div>
 					<div class="comment-post">
 						<div class="avatar avatar-small">
-							<img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatarSmall']?>" alt="image"/>
+
+	<?php if ( $_SESSION['logged_user']['avatarSmall'] == "" ) { ?>
+					<img src="<?=HOST?>templates/assets/img/placeholders/48--174766180.jpg" alt="image"/>
+				<?php } else { ?>
+					<img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatarSmall']?>" alt="image"/>
+		<?php } ?>
 						</div>
 						<div class="comment-post__author">
 							<?=$_SESSION['logged_user']['name']?> 

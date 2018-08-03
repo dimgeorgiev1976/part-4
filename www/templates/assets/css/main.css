@@ -2389,7 +2389,7 @@ a.cards-link {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 250px;
+  width: 100;
   font-size: 14px; }
 
 @media screen and (max-width: 552px) {

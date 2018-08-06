@@ -1,12 +1,13 @@
 
 <div class="comment">
 	<div class="avatar avatar-small comment__avatar">
-		<?php if ( $_SESSION['logged_user']['avatarSmall'] == "" ) { ?>
-					<img src="<?=HOST?>templates/assets/img/placeholders/user-avatar-placeholder-small.jpg" alt="image"/>
+			<?php if ( $_SESSION['logged_user']['avatarSmall'] == "" ) { ?>
+					<img src="<?=HOST?>templates/assets/img/placeholders/48--174766180.jpg" alt="image"/>
 				<?php } else { ?>
-					<img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatarSmall']?>" alt="image"/>
+									<img src="<?=HOST?>usercontent/avatar/<?=$comment['avatar_small']?>" alt="image"/>
 				<?php } ?>
-	</div>
+			</div>
+
 	<div class="comment__info__user_date">
 		<div class="comment__user_name">
 			<?=$comment['name']?>
@@ -19,6 +20,12 @@
 			<!-- <div class="comment__date">05 Мая 2017 года в 15:45</div> -->
 		</div>
 	</div>
+					<?php if ( isAdmin() ) { ?>
+<a class="button button-delete" 
+	href="<?=HOST?>blog/comment-delete?id=<?=$comment['id']?>"> Удалить </a>
+				<?php }  ?>
+	 
+
 	<div class="comment__text">
 		<?=$comment['text']?>
 	</div>

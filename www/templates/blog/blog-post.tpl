@@ -1,11 +1,11 @@
-<?php 
+<!-- <?php 
 
-// echo "<pre>";
-// print_r($post);
-// echo "</pre>";
+ echo "<pre>";
+ print_r($comments);
+ echo "</pre>";
 
  ?>
-
+ -->
 <div class="full-post">
 <div class="container">
 	<div class="row">
@@ -43,14 +43,14 @@
 				<?=$post['text']?>
 				</article>
 						<div class="full-post__next-prew"><a class="button button-regular" 
-								href="<?=HOST?>blog/post?id=<?=($post['id'] > $prev) ? ($post['id'] - 1) : ($post['id']-1 + $prev)?>">
-								<span class="button__small-fa-icon"><i class="fas fa-arrow-left">					
-					</i></span>Назад  </a><a class="button button-regular" 
-								href="<?=HOST?>blog/post?id=<?=($post['id'] < $next) ? 
-									($post['id'] + 1) : ($post['id'] + 1 - $next)?>"> Вперед 
-							 <span class="button__small-fa-icon">
-							<i class="fas fa-arrow-right"></i></span></a>
-						</div>
+										href="<?=HOST?>blog/post?id=<?=($post['id'] > $prev) ? ($post['id'] - 1) : ($post['id']-1 + $prev)?>">
+										<span class="button__small-fa-icon"><i class="fas fa-arrow-left"></i></span>Назад </a>
+										
+										<a class="button button-regular" 	href="<?=HOST?>blog/post?id=<?=($post['id'] < $next) ?
+								 	($post['id'] + 1) : ($post['id'] + 1 - $next)?>"> Вперед 
+									 <span class="button__small-fa-icon">
+									<i class="fas fa-arrow-right"></i></span></a>
+								</div>
 
 			<?php 	if ( count($comments) > 0) {  ?>
 				<h2 id="comments"><?php commentNumber( count($comments) ); ?></h2>

@@ -2,9 +2,6 @@
 
 $blogPost = ['title' => 'Заголовок поста', 'text' =>  'Текст поста'];
 
-// $postId = $_GET['id'];
-// $post = R::load('posts', $postId);
-
 $sql = '
 		SELECT 	
 			posts.id, posts.title, posts.text, posts.post_img, 
@@ -25,12 +22,15 @@ $post = $post[0];
 
 // $comments = R::findAll('comments', "post_id = $postId ORDER BY id DESC");
 
-$sql = 'SELECT comments.text, comments.date_time, 
+$sql = 'SELECT comments.id, comments.text, comments.date_time, 
 comments.user_id, users.name, users.secondname, 
-users.avatar_small FROM comments INNER JOIN users 
+users.avatar_small 
+FROM comments 
+INNER JOIN users 
 ON comments.user_id = users.id WHERE 
 comments.post_id = ' . $_GET['id'] ;
 $comments = R::getAll( $sql );
+
 
 $Next = 'Select max(`id`) as `max_id` from `posts`';
 $next = R::getAll( $Next );
@@ -43,7 +43,7 @@ $Prev = 'Select min(`id`) as `min_id` from `posts`';
   $prev = $prev['min_id'];
 
 // echo "<pre>";
-// print_r($Next);
+// print_r($comments);
 // echo "</pre>";
 
 // echo "<pre>";

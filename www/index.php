@@ -70,42 +70,6 @@ switch ( $uri[0]) {
     case 'profile-edit':
         include "modules/profile/edit.php";
         break;
-
-    // ::::::::::::::::::: BLOG :::::::::::::::::::
-
-    case 'blog':
-        include "modules/blog/index.php";
-        break;
-
-    case 'blog/post':
-        include "modules/blog/post.php";
-        break;
-
-    case 'blog/post-edit':
-        include "modules/blog/post-edit.php";
-        break;
-
-    case 'blog/post-new':
-        include "modules/blog/post-new.php";
-        break;
-    // ::::::::::::::::::: CATEGORIES :::::::::::::::::::
-
-    case 'blog/categories':
-        include "modules/categories/all.php";
-        break;
-
-    case 'blog/category-new':
-        include "modules/categories/new.php";
-        break;
-        
-    case 'blog/category-edit':
-        include "modules/categories/edit.php";
-        break;
-    case 'blog/category-delete':
-        include "modules/categories/delete.php";
-        break;
-
-
     // ::::::::::::::::::: About :::::::::::::::::::
 
     case 'about':
@@ -126,6 +90,64 @@ switch ( $uri[0]) {
 
    case 'about/expirience-delete':
         include "modules/about/delete.php";
+        break;
+    // ::::::::::::::::::: BLOG :::::::::::::::::::
+
+    case 'blog':
+        include "modules/blog/index.php";
+        break;
+
+    case 'blog/post':
+        include "modules/blog/post.php";
+        break;
+
+    case 'blog/post-edit':
+        include "modules/blog/post-edit.php";
+        break;
+
+    case 'blog/post-new':
+        include "modules/blog/post-new.php";
+        break;
+
+    case 'blog/post-delete':
+        include "modules/blog/delete.php";
+        break;
+
+    case 'blog/comment-delete':
+        include "modules/blog/comment-delete.php";
+        break;
+
+    // ::::::::::::::::::: CATEGORIES :::::::::::::::::::
+
+    case 'blog/categories':
+        include "modules/categories/all.php";
+        break;
+
+    case 'blog/category-new':
+        include "modules/categories/new.php";
+        break;
+        
+    case 'blog/category-edit':
+        include "modules/categories/edit.php";
+        break;
+    case 'blog/category-delete':
+        include "modules/categories/delete.php";
+        break;
+
+    // ::::::::::::::::::: CONTACTS :::::::::::::::::::
+    case 'contacts':
+        include "modules/contacts/index.php";
+        break;
+         
+    case 'contacts-edit':
+        include "modules/contacts/edit.php";
+        break;
+    case 'messages':
+        include "modules/contacts/messages.php";
+        break;
+
+        case 'contacts-delete':
+        include "modules/contacts/delete.php";
         break;
 
     // ::::::::::::::::::: WORK :::::::::::::::::::
@@ -152,22 +174,6 @@ switch ( $uri[0]) {
 
     case 'work/work-single':
         include "modules/work/work-single.php";
-        break;
-
-    // ::::::::::::::::::: CONTACTS :::::::::::::::::::
-    case 'contacts':
-        include "modules/contacts/index.php";
-        break;
-         
-    case 'contacts-edit':
-        include "modules/contacts/edit.php";
-        break;
-    case 'messages':
-        include "modules/contacts/messages.php";
-        break;
-
-        case 'contacts-delete':
-        include "modules/contacts/delete.php";
         break;
 
     // ::::::::::::::::::: PAGES :::::::::::::::::::

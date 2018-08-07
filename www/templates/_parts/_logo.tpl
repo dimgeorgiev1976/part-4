@@ -1,7 +1,7 @@
 <div class="header-user__logo-brand">
 	<div class="header-user__logo"><a href="index.html">
 		<svg class="icon icon-plane plane-mod">
-			<use xlink:href="http://part-4/www/templates/assets/img/sprite.svg#plane"></use>
+					<use xlink:href="<?=HOST?>templates/assets/img/sprite.svg#plane"></use>
 		</svg></a>
 	</div>
 	<a class="header-user__brand" href="index.html">

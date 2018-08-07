@@ -7,7 +7,6 @@
 				<?php } else { ?>
 					<img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logged_user']['avatarSmall']?>" alt="image"/>
 				<?php } ?>
-
 				
 			</div>
 		</div>

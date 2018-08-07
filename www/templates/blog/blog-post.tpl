@@ -15,6 +15,9 @@
 			<?php if ( isAdmin() ) { ?>
 				<a class="button button-edit" 
 				href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>"> Редактировать </a>
+				 <a class="button button-delete" 
+          href="<?=HOST?>blog/post-delete?id=<?=$post['id']?>">Удалить</a>
+
 			<?php }  ?>
 
 			<h1 class="full-post__title"><?=$post['title']?></h1>

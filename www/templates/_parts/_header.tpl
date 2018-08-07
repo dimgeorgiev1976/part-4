@@ -13,12 +13,12 @@ if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
 		<div class="header-user__mobile-bar" id="navigation-toggle">
 			<div class="header-user__mobile-toggle">
 				<svg class="icon icon-nav nav-mod">
-					<use xlink:href="/img/sprite.svg#nav"></use>
+					<use xlink:href="templates/assets/img/sprite.svg#nav"></use>
 				</svg>
 			</div>
 			<div class="header-user__mobile-close">
 				<svg class="icon icon-close close-mod">
-					<use xlink:href="/img/sprite.svg#close"></use>
+					<use xlink:href="templates/assets/img/sprite.svg#close"></use>
 				</svg>
 			</div>
 			<p>Открыть навигацию</p>

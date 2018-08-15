@@ -18,6 +18,7 @@
           </ul>
         </nav>
       </div>
+
       <input type="radio" name="tabs" id="tab2"/>
       <div class="tab-label-content" id="tab2-content">
         <label for="tab2">Админка</label>

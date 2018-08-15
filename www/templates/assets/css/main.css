@@ -1985,7 +1985,7 @@ a.cards-link {
 
 /*styles work-page-individual--guest*/
 .container-work-page--individual {
-  background-image: url("/img/bg/invidual-work-page-bg.jpg");
+  background-image: url("/templates/assets/img/bg/invidual-work-page-bg.jpg");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 100%; }

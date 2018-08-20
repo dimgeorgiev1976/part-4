@@ -9,10 +9,10 @@ if ( isset($_SESSION['logged_user']) && $_SESSION['login'] == 1 ) {
 
   <div class="container-work-page--individual">
     <div class="header-user__logo-brand">
-      <div class="header-user__logo"><a href="index.html">
+      <div class="header-user__logo"><a href="<?=HOST?>work">
           <svg class="icon icon-plane plane-mod">
-            <use xlink:href="/img/sprite.svg#plane"></use>
-          </svg></a></div><a class="header-user__brand" href="index.html">
+           <use xlink:href="<?=HOST?>templates/assets/img/sprite.svg#plane"></use>
+            </svg></a></div><a class="header-user__brand" href="<?=HOST?>work">
         <div class="header-user__brandname">
           <h1>Digital Lyfestyle</h1>
         </div>

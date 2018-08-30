@@ -1,11 +1,11 @@
 <!-- <?php 
 
  echo "<pre>";
- print_r($comments);
+print_r($post);
  echo "</pre>";
 
- ?>
- -->
+ ?> -->
+
 <div class="full-post">
 <div class="container">
 	<div class="row">
@@ -83,16 +83,14 @@
 							method="POST" 
 							action="<?=HOST?>blog/post?id=<?=$post['id']?>" > 
 							<?php require ROOT. "templates/_parts/_errors.tpl" ?>
-							<textarea id="ckEditor" class="form-message" 
+							<textarea id="ck" class="form-message editor"
 								name="commentText" 
 								placeholder="Присоединиться к обсуждению..."></textarea>
 							<input type="submit" name="addComment" class="button button-regular" 
 							value="Опубликовать">
 						</form>
 					</div>
-					
-				<?php } else { ?>
-
+									<?php } else { ?>
 					<div class="no-auth">
 						<div class="no-auth__title"> 
 							<a href="<?=HOST?>login">Войдите</a> или 

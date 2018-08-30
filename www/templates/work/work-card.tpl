@@ -2,7 +2,6 @@
      <div class="col-md-6 col-xl-4">
           <div class="card card-portfolio">
 
-
   <?php if ( $work['work_img_small'] != "" ) {?>
 			<img class="card__img card-portfolio__img" src="<?=HOST?>usercontent/portfolio/<?=$work['work_img_small']?>"
 			 alt="<?=$work['title']?>"/>
@@ -16,5 +15,4 @@
             href="work/work-single?id=<?=$work->id?>"> Смотреть кейс </a>
           </div>
       </div>
-
 

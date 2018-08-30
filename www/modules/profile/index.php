@@ -1,5 +1,5 @@
 <?php 
-
+$page_title = "Димитар Георгиев - Профиль";
 $currentUser = $_SESSION['logged_user'];
 
 

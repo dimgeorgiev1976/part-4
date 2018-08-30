@@ -11,6 +11,8 @@ $cats = R::find('categories', 'ORDER BY id DESC');
 // print_r($_POST);
 // echo "</pre>";
 
+
+
 $errors = array();
 
 if ( isset($_POST['postNew'])) {
@@ -18,10 +20,14 @@ if ( isset($_POST['postNew'])) {
 	if ( trim($_POST['postTitle']) == '') {
 		$errors[] = ['title' => 'Введите Название поста' ];
 	}
-
 	if ( trim($_POST['postText']) == '') {
 		$errors[] = ['text' => 'Введите Текст поста' ];
 	}
+$string = $_POST['postTitle'];
+
+if( strlen( $string ) > 20 ) {
+   $string = substr( $string, 0, 20 ) . '...';
+}
 
 	if ( empty($errors)) {
 		$post = R::dispense('posts');

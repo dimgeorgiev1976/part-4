@@ -52,7 +52,7 @@
           <textarea class="form-message" name="workDone"
            placeholder="Сообщение"><?=$work->result?></textarea>
           <div class="add-post__title">Технологии</div>
-          <textarea id="ckEditor" class="form-message" name="workTech"
+          <textarea id="ck" class="form-message editor" name="workTech"
            placeholder="Сообщение"><?=$work->technologies?></textarea>
 
            <div class="add-post__title">Ссылка на проект</div>

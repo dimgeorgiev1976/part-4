@@ -108,10 +108,9 @@ function adopt($text) {
 	return '=?UTF-8?B?'.base64_encode($text).'?=';
 }
 
-function mbCutString($top_title, $length, $postfix = '...', $encoding = 'UTF-8' ){
+//shorten long headings
+function mbCutString($string, $length, $postfix = '...', $encoding = 'UTF-8' ){
 
-$length = 20;
-$string = $top_title;
 	if ( mb_strlen($string, $encoding) <= $length ) {
 		return $string;
 	}
@@ -122,6 +121,7 @@ $string = $top_title;
 	return $result;
 
 }
+
 
 
 ?>

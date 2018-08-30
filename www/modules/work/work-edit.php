@@ -4,7 +4,7 @@ if ( !isAdmin() ) {
 	header("Location: " . HOST);
 	die;
 }
-
+$errors = array();
 // $workId = $_GET['id'];
 $work = R::load('works', $_GET['id']);
 
@@ -18,7 +18,7 @@ $work = R::load('works', $_GET['id']);
 // print_r($work);
 // echo "</pre>";
 
-$errors = array();
+
 
 if ( isset($_POST['workUpdate'])) {
 

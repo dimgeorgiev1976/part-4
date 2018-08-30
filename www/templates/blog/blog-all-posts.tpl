@@ -9,11 +9,9 @@
 			</div>
 		</div>
 		<div class="row">
-
 			<?php foreach ($posts as $post): ?>
 				<?php include "blog-card.tpl"; ?>
 			<?php endforeach ?>
-
 		</div>
 	</div>
 </div>

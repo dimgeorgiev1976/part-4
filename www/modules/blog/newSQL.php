@@ -49,6 +49,14 @@ ON comments.id = posts.id
 
 WHERE posts.id = 12 LIMIT 1
 
+Select title as top_title from `posts`
+SELECT 	
+			posts.id, posts.title, posts.text, posts.post_img, 
+			posts.date_time, posts.author_id, posts.cat,
+			users.name, users.secondname, 
+			categories.cat_title 
+		FROM posts 
+		WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1';
 
 <!-- WHERE posts.id = ' . $_GET['id'] . ' LIMIT 1'; -->
 expression ? true_value : folse_value  
@@ -65,19 +73,41 @@ expression ? true_value : folse_value
 8)  Кнопки Вперед / Назад на странице с постом - удалить их или сделать чтобы они работали
 9)  Возможность удалить Коментарий из раздел messages.
 Admin-dvoen@rightblog.ru
-123456 To https://github.com/dimgeorgiev1976/part-4.git
+123456 
+To https://github.com/dimgeorgiev1976/part-4.git
 10) Системные багни в верстке.
-11) Возможность удалить comments из Post, кнопка Удалить!
+11)  Возможность удалить comments из Post, кнопка Удалить!
 12)  Возможность удалить Post из раздел Блог и Кнопка удалить
 14)  Вывод изображение в Профил редактировать
 11)  Некоректно отображение kaрточки в Работы на горен лев угол.  
 16)  Иконка самолет в шапка
+17)  Kaртинка на фон в Работы
+18)  Бутони иконки  twiter,vk ....
+<!-- FB not workink link -->
+19)  Обрезка длинных заголовков постов и работ, стоит делать эту обрезу сразу на уровне PHP
+14) добавить CKEDITOR для нескольких textarea с классом editor
 
 
-18)  Обрезка длинных заголовков постов и работ, стоит делать эту обрезу сразу на уровне PHP
+
 10)  Кнопка в раздел messages поправит форма и JS.  Некоректно отображение Удалить.
-13)  Бутони иконки  twiter,vk ....
 <!-- 17)  Кнопки Вперед / Назад на странице переход основанный на ID так  -->
 
+ТЗ
+Верстка под десктоп разширение без мобилна 
 
+1.Сверстат макет интернет магазина по шаблона 
 
+2.Макет состоится из 9 блока
+-Навигация
+
+-слайдер в шапке
+;
+;
+
+3.Описание поведение елементов 
+-анимаций
+-интерактивий
+-модално окно
+-работа форм
+
+4.

@@ -11,14 +11,7 @@ require ROOT . "config.php";
 require ROOT . "db.php";
 require ROOT . "libs/functions.php";
 session_start();
-// $currentUser = $_SESSION['logged_user'];
-// echo HOST;http://part-4/work-edit.html
-// echo ROOT;
-
-// echo "index.php";
-// echo "<br><br>";
-
-
+$contacts = R::load('contacts', 1);
 /* ..........................................
 
 РОУТЕР

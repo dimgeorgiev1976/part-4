@@ -1,13 +1,8 @@
 <?php 
-
+$page_title = "Димитар Георгиев - Обо мне";
 $about = R::load('about', 1);
 $skills = R::load('skills', 1);
 $jobs = R::find('jobs', 'ORDER BY id DESC');
-
-
-// echo "<pre>";
-// print_r($about);
-// echo "</pre>";
 
 // Готовим контент для центральной части
 ob_start();

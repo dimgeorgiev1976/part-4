@@ -1,5 +1,5 @@
 <?php 
-
+$page_title = "Димитар Георгиев - Регистрация";
 // echo "<pre>";
 // print_r($_POST);
 // echo "</pre>";

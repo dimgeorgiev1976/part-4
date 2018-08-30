@@ -1,5 +1,5 @@
 <?php 
-
+$page_title = "Димитар Георгиев - Восстановление пароля";
 $errors = array();
 
 if ( isset($_POST['lost'])) {

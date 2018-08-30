@@ -11,7 +11,7 @@
 		<?php } ?>
 
 
-            <h2 class="card__title"><?=$work->title?></h2><a class="button button-regular" 
+            <h2 class="card__title"><?=mbCutString($work->title, 25)?></h2><a class="button button-regular" 
             href="work/work-single?id=<?=$work->id?>"> Смотреть кейс </a>
           </div>
       </div>

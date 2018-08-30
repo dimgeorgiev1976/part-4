@@ -1,5 +1,6 @@
 <?php
 
+$page_title = "Димитар Георгиев - Контакты";
 $errors = array();
 $success = false;
 $recoveryCode = false;

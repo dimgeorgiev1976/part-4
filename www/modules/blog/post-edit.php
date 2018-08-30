@@ -101,8 +101,6 @@ if ( isset($_POST['postUpdate'])) {
 	}
 }
 
-// $blogPost = ['title' => 'Заголовок поста', 'text' =>  'Текст поста'];
-
 // Готовим контент для центральной части
 ob_start();
 include ROOT . "templates/_parts/_header.tpl";

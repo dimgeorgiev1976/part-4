@@ -1,5 +1,5 @@
 <?php
-
+$page_title = "Димитар Георгиев - Главная";
 $about = R::findOne('about', 1);
 $posts = R::find('posts', 'ORDER BY id DESC LIMIT 3');
 $works = R::find('works', 'ORDER BY id DESC LIMIT 3');

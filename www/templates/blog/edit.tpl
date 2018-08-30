@@ -69,12 +69,11 @@
 						  <input id="deleteImgCheckBox" type="checkbox" name="deleteImg" hidden="hidden"/>
 						  <label for="deleteImgCheckBox">Картинка будет удалена</label>
 						</div>
-
 					</div>
 				</section>
 				<section class="add-post">
 					<div class="add-post__title">Содержание</div>
-					<textarea id="ckEditor" class="form-message" name="postText" 
+					<textarea id="ck" class="form-message editor" name="postText" 
 					placeholder="Сообщение"><?=$post->text?></textarea>
 					<input type="submit" name="postUpdate" class="button button-save" value="Сохранить">
 					<a class="button button-regular" href="<?=HOST?>blog/post?id=<?=$post->id?>"> Отмена </a>

@@ -90,18 +90,17 @@
 	   <h5 class="form_btn-up-wrap"> Прикрепить файл</h5>
 	   <div class="form-download">
 		 <div class="form-download__title">jpg, png, pdf, doc, весом до 4Мб.</div>
-				<div class="form-download__container contacts-container-mod"> 
-				<fieldset>
-					<input type="file" id="file" name="file" class="inputfile" 
-					data-multiple-caption="{count} файлов выбрано" multiple />
-						<label for="file" >Выбрать файл</label> <span></span>
-						</fieldset>
-				 </div>
-				 </div>
-   <div class="form_submit-button">
-		<input type="submit" name="newMessage" value="Отправить" class="button button-save">
-	   </div>
-	 </form>
+				  <div class="form-download__container contacts-container-mod"> 
+		    <fieldset>
+            <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} файлов выбрано" multiple style="display:none;"/>
+            <label class="form-download__btn contacts-btn-mod" for="file">Выбрать файл</label> <span></span>
+          </fieldset>
+          </div>
+        </div>
+        <div class="form_submit-button">
+        <input class="button button-save" type="submit" name="newMessage" value="Отправить">
+        </div>
+      </form>
 
  </main>
 <?php if ( $contacts->lat != "" &&  $contacts->lng != "" ) {  ?>

@@ -4,13 +4,9 @@ if ( !isAdmin() ) {
 	header("Location: " . HOST);
 	die;
 }
-
-// $cats = R::find('categories', 'ORDER BY id DESC');
-
 // echo "<pre>";
 // print_r($_POST);
 // echo "</pre>";
-
 $errors = array();
 
 if ( isset($_POST['workNew'])) {

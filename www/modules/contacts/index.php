@@ -1,5 +1,5 @@
 <?php 
-
+$page_title = "Димитар Георгиев - Контакты";
 $contacts = R::load('contacts', 1);
 
 $errors = array();

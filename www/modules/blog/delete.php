@@ -1,5 +1,6 @@
 <?php 
-
+Димитар Георгиев
+$page_title = "Димитар Георгиев - Обо мне";
 if ( !isAdmin() ) {
 	header("Location: " . HOST);
 	die;

@@ -1,10 +1,5 @@
 <?php 
 
-// $workSingle = ['title' => 'Заголовок pаботy', 'title' =>  'Текст pаботy',
-// 'description' => 'Введите Oписание работы', 'tech' =>  'Введите Teхнологии работы'];
-
-// $workId = $_GET['id'];
-// $work = R::load('works', $workId);
 
 $sql = 'SELECT works.id, works.title, works.text, works.work_img, works.result, 
 works.technologies, works.link,works.github, works.date_time, works.author_id,

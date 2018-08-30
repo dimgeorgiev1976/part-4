@@ -6,7 +6,7 @@
 
 	  <?php include( ROOT . 'templates/_parts/_errors.tpl') ?>
 
-
+   <section class="add-post">
 	  <form class="form-edit" action="<?=HOST?>contacts-edit" method="POST">
 		<div class="wrap-row">
 		  <div class="row-inp">
@@ -36,7 +36,6 @@
 			  <div class="edit-inp form-edit_wrap fix-margin"><span>Facebook</span>
 				<input value="<?=$contacts->fb?>" class="form-name edit-input" type="text" name="fb" placeholder="Введите ссылку на профиль"/><span class="error"></span>
 			  </div>
-			</div>
 			<div class="row-wrap">
 			  <div class="edit-inp form-edit_wrap"><span>GitHub</span>
 				<input value="<?=$contacts->github?>" class="form-name edit-input" type="text" name="github" placeholder="Введите ссылку на профиль"/><span class="error"></span>
@@ -45,37 +44,33 @@
 				<input value="<?=$contacts->twitter?>" class="form-name edit-input" type="text" name="twitter" placeholder="Введите ссылку на профиль"/><span class="error"></span>
 			  </div>
 			</div>
-		  </div>
-		  
+	 </div>
+	 </div>
+	 		  <div class="row-inp">
+			<div class="row-wrap">
+				<div class="edit-inp form-edit_wrap"><span>Широта</span>
+		  		<input value="<?=$contacts->lat?>" class="form-name edit-input" type="text" name="lat" placeholder="Введите широту"/><span class="error"></span>
+				</div>
 
-		  <div class="row-inp">
-
+		  	<div class="edit-inp form-edit_wrap"><span>Долгота</span>
+		  		<input value="<?=$contacts->lng?>" class="form-name edit-input" type="text" name="lng" placeholder="Введите долготу"/><span class="error"></span>
+		  	</div>
+			  </div>
 		  	<div class="edit-inp form-edit_wrap">Телефон
 		  		<input value="<?=$contacts->tel?>" class="form-name edit-input" type="text" name="tel" placeholder="Введите номер"/><span class="error"></span>
 		  	</div>
 
 		  	<div class="edit-inp form-edit_wrap fix-margin">Адрес
-		  		<textarea id="ckEditor" class="form-message" name="address" id="" cols="30" rows="10" placeholder="Введите адрес"><?=$contacts->address?></textarea>
+		  		<textarea id="ck" class="form-message editor" name="address" id="" cols="30" rows="10" placeholder="Введите адрес"><?=$contacts->address?></textarea>
 		  		<span class="error"></span>
 		  	</div>
-
-		  	<div class="edit-inp form-edit_wrap">Широта
-		  		<input value="<?=$contacts->lat?>" class="form-name edit-input" type="text" name="lat" placeholder="Введите широту"/><span class="error"></span>
-		  	</div>
-
-		  	<div class="edit-inp form-edit_wrap">Долгота
-		  		<input value="<?=$contacts->lng?>" class="form-name edit-input" type="text" name="lng" placeholder="Введите долготу"/><span class="error"></span>
-		  	</div>
-
-
 		  </div>
-
-
 		</div>
 		<div class="row-inp button-row">
 		  <input type="submit" name="contactsUpdate" class="button button-save" value="Сохранить">
 
 		 <a class="button button-regular" href="<?=HOST?>contacts">Отмена</a>
+         </section> 
 		</div>
 	  </form>
 	</div>

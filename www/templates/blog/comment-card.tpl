@@ -24,9 +24,7 @@
 <a class="button button-delete" 
 	href="<?=HOST?>blog/comment-delete?id=<?=$comment['id']?>"> Удалить </a>
 				<?php }  ?>
-	 
-
-	<div class="comment__text">
+	 	<div class="comment__text">
 		<?=$comment['text']?>
 	</div>
 </div>

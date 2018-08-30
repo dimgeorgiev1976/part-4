@@ -3,13 +3,6 @@ if ( !isAdmin() ) {
 	header("Location: " . HOST);
 	die;
 }
-// $sql = 'SELECT messages.text, messages.date_time, 
-// messages.user_id, users.name, users.secondname, 
-// users.avatar_small FROM messages INNER JOIN users 
-// ON messages.user_id = users.id WHERE 
-// messages.post_id = ' . $_GET['id'] ;
-// $comments = R::getAll( $sql );
-
 
 // $mess = R::load('messages', 1);
 $messages = R::load('messages', $_GET['id']);

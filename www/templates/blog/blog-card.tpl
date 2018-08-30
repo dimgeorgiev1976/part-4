@@ -6,10 +6,8 @@
 			alt="<?=$post['title']?>"/>
 		<?php } else {?>
 			<img class="full-post__img" src="<?=HOST?>usercontent/blog/no-image.jpg" alt="<?=$post['title']?>"/>
-		<?php } ?>
-
-
-		<h2 class="card__title"><?=$post->title?></h2>
+	<?php } ?>
+		<h2 class="card__title"><?=mbCutString($post->title, 25)?></h2>
 		<a class="button button-regular" href="blog/post?id=<?=$post->id?>">Читать</a>
 	</div>
 </div>

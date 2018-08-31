@@ -2,27 +2,15 @@
 
 //Настройка БД
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'part-4');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
+define('DB_NAME', 'id6962890_project');
+define('DB_USER', 'id6962890_dimgeorgiev1976');
+define('DB_PASSWORD', 'SWQ0xK');
 
 // SITE SETTINGS FOR EMAILS
-define('SITE_NAME', 'Сайт портфолио - WebDev02');
-define('SITE_EMAIL', 'info@webdev02.com');
-define('ADMIN_EMAIL', 'dim.georgiev1976@gmail.com ');
+define('SITE_NAME', 'dimig.000webhostapp.com');
+define('SITE_EMAIL', 'dimig.000@webhostapp.com');
+define('ADMIN_EMAIL', 'dim.georgiev1976@yandex.com ');
 
-
-/**
-* Устанавливает путь до корневой директории скрипта
-* по протоколу HTTP
-*/
-
-// define('HOST', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/');
-
-// *
-// * Устанавливает физический путь до корневой директории скрипта
-
-// define('ROOT', dirname(__FILE__).'/');
 
 
 ?>

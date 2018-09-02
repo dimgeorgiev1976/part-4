@@ -1,6 +1,6 @@
 <?php 
 
-define('HOST', 'https://' . $_SERVER['HTTP_HOST'] . '/');
+define('HOST', 'http://' . $_SERVER['HTTP_HOST'] . '/');
 /**
 * Устанавливает физический путь до корневой директории скрипта
 */

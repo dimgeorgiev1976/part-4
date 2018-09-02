@@ -1,9 +1,9 @@
 <?php 
 
 //Настройка БД
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'id6962890_project');
-define('DB_USER', 'id6962890_dimgeorgiev1976');
+define('DB_HOST', 'mysql.zzz.com.ua');
+define('DB_NAME', 'dimgeorgiev1976');
+define('DB_USER', 'filmoteka');
 define('DB_PASSWORD', 'SWQ0xK');
 
 // SITE SETTINGS FOR EMAILS

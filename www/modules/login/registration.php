@@ -1,21 +1,5 @@
 <?php 
 $page_title = "Димитар Георгиев - Регистрация";
-// echo "<pre>";
-// print_r($_POST);
-// echo "</pre>";
-
-$errors = array();
-
-// $error1 = ['title' => 'Введите Email' ];
-// $error2 = ['title' => 'Введите Пароль' ];
-// $error3 = ['title' => 'Пользователь с там email уже зарегистрирован', 'desc' => 'Используйте другой Email адрес, или воспользуйтесь восстановлением пароля.' ];
-
-// $errors = [ 
-// 		['title' => 'Введите Email' ], 
-// 		['title' => 'Введите Пароль' ], 
-// 		['title' => 'Пользователь с там email уже зарегистрирован', 'desc' => 'Используйте другой Email адрес, или воспользуйтесь восстановлением пароля.' ]  
-// 	];
-
 // Если форма отправлена - то делаем регистрацию
 
 if ( isset($_POST['register'])) {
@@ -48,17 +32,12 @@ if ( isset($_POST['register'])) {
 		header('Location: ' . HOST . "profile-edit");
 		exit();
 	}
-
-
 }
-
-
 // Готовим контент для центральной части
 ob_start();
 include ROOT . "templates/login/form-registration.tpl";
 $content = ob_get_contents();
 ob_end_clean();
-
 include ROOT . "templates/login/login-page.tpl";
 
 ?>

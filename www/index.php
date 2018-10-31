@@ -1,6 +1,6 @@
 <?php 
 
-define('HOST', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+define('HOST', 'https://' . $_SERVER['HTTP_HOST'] . '/');
 /**
 * Устанавливает физический путь до корневой директории скрипта
 */
@@ -10,6 +10,7 @@ require ROOT . "config.php";
 require ROOT . "db.php";
 require ROOT . "libs/functions.php";
 session_start();
+
 $contacts = R::load('contacts', 1);
 /* ..........................................
 
@@ -17,15 +18,12 @@ $contacts = R::load('contacts', 1);
 
 ............................................. */
 
-// request URL = http://project/blog/post?id=15
 $uri =  $_SERVER["REQUEST_URI"];
 $uri = rtrim($uri, "/"); 
 $uri = filter_var($uri, FILTER_SANITIZE_URL);
 $uri = substr($uri, 1);
 $uri = explode('?', $uri);
 
-// echo $uri[0];
-// echo "<br><br>";
 
 switch ( $uri[0]) {
 	case '':
